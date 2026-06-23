@@ -1,0 +1,4 @@
+baseURL: "https://faleite.xyz/blog/"
+languageCode: pt-BR
+title: Blog
+theme: hextra
