@@ -1,7 +1,10 @@
 ---
 title: ""
 ---
+> [!NOTE]  
+> **[Blog](https://faleite.xyz/blog/)**
 
 > [!TIP]
-> #### About [faleite](https://faleite.xyz)
+> **[About Me](https://faleite.xyz)**
+
 ![landscape](https://picsum.photos/800/600)
