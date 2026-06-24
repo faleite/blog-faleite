@@ -8,7 +8,7 @@
 // 
 
 (function () {
-  const searchDataURL = '/blog/en.search-data.json';
+  const searchDataURL = '/en.search-data.json';
 
   let pageIndex;
   let sectionIndex;

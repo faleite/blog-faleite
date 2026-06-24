@@ -1,4 +1,48 @@
-baseURL: "https://faleite.xyz/blog/"
+baseURL: "https://blog.faleite.xyz/"
 languageCode: pt-BR
-title: Blog
+title: faleite.xyz
 theme: hextra
+
+menu:
+  main:
+    - name: Blog
+      pageRef: /blog
+      weight: 1
+      params:
+        type: link
+        icon: rss
+    - name: Theme
+      identifier: theme-toggle
+      weight: 2
+      params:
+        type: theme-toggle
+        label: false
+    - name: Search
+      weight: 3
+      params:
+        type: search
+    - name: GitHub
+      weight: 4
+      url: "https://github.com/faleite"
+      params:
+        icon: github
+
+# redirects:
+#   - from: /
+#     to: /blog
+#     status: 301
+
+# params:
+#   page:
+#     width: wide # full wide normal
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+      link: https://www.faleite.xyz/
+      width: 20
+      height: 20
+      
