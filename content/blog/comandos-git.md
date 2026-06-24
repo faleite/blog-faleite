@@ -1,6 +1,5 @@
 ---
 date: '2026-06-24T11:47:10+01:00'
-draft: true
 title: 'Comandos Git'
 ---
 
