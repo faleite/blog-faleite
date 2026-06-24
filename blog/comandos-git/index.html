@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
-  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg" />
-<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>Comandos Git – faleite.xyz</title>
-  <meta name="description" content="Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
-Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add &lt;arquivo&gt; Desfazer preparação de arquivo a ser commitado git rm –cached &lt;arquivo&gt; Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch &lt;nome&gt; Cria uma nova branch e muda para a branch criada git checkout -b &lt;nomeBranch&gt; Mudar de branch git checkout &lt;nomeBranch&gt; Ir para um commit específico git checkout &lt;numeroCommit&gt; Apagar uma branch git branch -d &lt;nomeBranch&gt; Reverte o arquivo para o ultimo commit git checkout -- &lt;nomeArquivo&gt; Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD &lt;nomeArquivo&gt; Mais sobre Branch Ação Comando Renomear branch local git branch -m &lt;novoNome&gt; Renomear uma branch enquanto esta em outra git branch -m &lt;nomeAntigo&gt; &lt;novoNome&gt; Renomear branch default global git config –global init.defaultBranch &lt;novo-nome&gt; Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="index, follow"><link rel="icon shortcut" href=/favicon.ico sizes=32x32><link rel=icon href=/favicon.svg type=image/svg+xml id=favicon-svg><link rel=icon href=/favicon-16x16.png type=image/png sizes=16x16><link rel=icon href=/favicon-32x32.png type=image/png sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png sizes=180x180><link fetchpriority=low href=/site.webmanifest rel=manifest><title>Comandos Git – faleite.xyz</title><meta name=description content='Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
+Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add <arquivo> Desfazer preparação de arquivo a ser commitado git rm –cached <arquivo> Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch <nome> Cria uma nova branch e muda para a branch criada git checkout -b <nomeBranch> Mudar de branch git checkout <nomeBranch> Ir para um commit específico git checkout <numeroCommit> Apagar uma branch git branch -d <nomeBranch> Reverte o arquivo para o ultimo commit git checkout -- <nomeArquivo> Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD <nomeArquivo> Mais sobre Branch Ação Comando Renomear branch local git branch -m <novoNome> Renomear uma branch enquanto esta em outra git branch -m <nomeAntigo> <novoNome> Renomear branch default global git config –global init.defaultBranch <novo-nome> Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
 outro branch Produzem quase o mesmo resultado final O git merge cria uma nova ramificação que contém as alterações de todas
 as ramificações combinadas O git rebase pega todas as alterações de uma ramificação e aplica as mudanças
 diretamente na outra ramificação, como se o trabalho tivesse sido feito em
 sequência, em uma única ramificação. Rebase Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits
 e resolver tudo o que acontecer. Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e
-volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase &lt;main&gt; Emcorporar modificação de uma outra branch na branch master git merge &lt;nomeBranch&gt; Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
+volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase <main> Emcorporar modificação de uma outra branch na branch master git merge <nomeBranch> Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
 um commit de merge (uma fundição), que vai colocar todos esses commits no meu
-branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge &lt;suaBranch&gt; Observações Etapas Ir para a branch principal git checkout &lt;main&gt; Fazer o merge git merge &lt;suaBranch&gt; Voltar para a sua branch git checkout &lt;suaBranch&gt; Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
+branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge <suaBranch> Observações Etapas Ir para a branch principal git checkout <main> Fazer o merge git merge <suaBranch> Voltar para a sua branch git checkout <suaBranch> Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
 de volta. Permite deixar de lado modificações feitas, quando você precisa urgentemente
 fazer outra coisa. É como se você criasse pequenas branches. Permite limpar rapidamente o git para poder fazer uma operação nele
 e voltar. Git stash pega tudo que foi modificado na pasta, cria um pequeno commit
 e guarda Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado
-para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \&lt;endereçoSshGit&gt; Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin &lt;nome-da-branch&gt; Clonar repositório remoto git clone \&lt;endereçoSshGit&gt; Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \&lt;nome-branch&gt; Fazer fetch em branch especifica git fetch origin \&lt;nome-branch&gt; Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch &lt;nomeArquivo&gt; Criar uma linha de texto no arquivo echo “linha de text” » &lt;nomeArquivo&gt; Mostrar conteúdo do arquivo cat &lt;nomeArquivo&gt; Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – &lt;nomeArquvio&gt; Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:&#34;%h - %an, %ar : %s&#34; Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:&#34;%H&#34; # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format=&#34;%H&#34; # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name &lt;nomeUsuario&gt; Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -&gt; conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -&gt; nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! &gt; &gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m &lt;nomeVersao&gt; v1.0 é o nome da Tag &lt;nomeVersao&gt; é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin &lt;nome-da-tag&gt; Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit " /><link rel="canonical" href="http://localhost:1313/blog/comandos-git/" itemprop="url" />
-
-<meta property="og:title" content="Comandos Git">
-<meta
-  property="og:description"
-  content="
+para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \<endereçoSshGit> Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin <nome-da-branch> Clonar repositório remoto git clone \<endereçoSshGit> Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \<nome-branch> Fazer fetch em branch especifica git fetch origin \<nome-branch> Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch <nomeArquivo> Criar uma linha de texto no arquivo echo “linha de text” » <nomeArquivo> Mostrar conteúdo do arquivo cat <nomeArquivo> Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – <nomeArquvio> Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:"%h - %an, %ar : %s" Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:"%H" # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format="%H" # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name <nomeUsuario> Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -> conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -> nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! > > Co-authored-by: nome <email.@email.com>&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m <nomeVersao> v1.0 é o nome da Tag <nomeVersao> é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin <nome-da-tag> Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit '><link rel=canonical href=https://blog.faleite.xyz/blog/comandos-git/ itemprop=url><meta property="og:title" content="Comandos Git"><meta property="og:description" content='
     
       Git&ldquo;É um consenso que a verdade está em um lugar, e geralmente está longe.&rdquo;
 Principais Ações
@@ -50,11 +34,11 @@ Principais Ações
 			
 			
 					Preparar arquivo a ser enviado a um commit
-					git add &lt;arquivo&gt;
+					git add <arquivo>
 			
 			
 					Desfazer preparação de arquivo a ser commitado
-					git rm &ndash;cached &lt;arquivo&gt;
+					git rm &ndash;cached <arquivo>
 			
 			
 					Fazer registro do arquivo (commit)
@@ -102,31 +86,31 @@ Branch e Checkout
 			
 			
 					Criar uma nova branch
-					git branch &lt;nome&gt;
+					git branch <nome>
 			
 			
 					Cria uma nova branch e muda para a branch criada
-					git checkout -b &lt;nomeBranch&gt;
+					git checkout -b <nomeBranch>
 			
 			
 					Mudar de branch
-					git checkout &lt;nomeBranch&gt;
+					git checkout <nomeBranch>
 			
 			
 					Ir para um commit específico
-					git checkout &lt;numeroCommit&gt;
+					git checkout <numeroCommit>
 			
 			
 					Apagar uma branch
-					git branch -d &lt;nomeBranch&gt;
+					git branch -d <nomeBranch>
 			
 			
 					Reverte o arquivo para o ultimo commit
-					git checkout -- &lt;nomeArquivo&gt;
+					git checkout -- <nomeArquivo>
 			
 			
 					Desfazer preparação de arquivos modificados para o próximo commit
-					git reset HEAD &lt;nomeArquivo&gt;
+					git reset HEAD <nomeArquivo>
 			
 	
 
@@ -141,15 +125,15 @@ Mais sobre Branch
 	
 			
 					Renomear branch local
-					git branch -m &lt;novoNome&gt;
+					git branch -m <novoNome>
 			
 			
 					Renomear uma branch enquanto esta em outra
-					git branch -m &lt;nomeAntigo&gt; &lt;novoNome&gt;
+					git branch -m <nomeAntigo> <novoNome>
 			
 			
 					Renomear branch default global
-					git config &ndash;global init.defaultBranch &lt;novo-nome&gt;
+					git config &ndash;global init.defaultBranch <novo-nome>
 			
 			
 					Mostrar nome e ultimo commit da branch local
@@ -190,11 +174,11 @@ volta ao branch principal e aplica todos os commits por cima.
 	
 			
 					Faça o rebase do main no meu branch
-					git rebase &lt;main&gt;
+					git rebase <main>
 			
 			
 					Emcorporar modificação de uma outra branch na branch master
-					git merge &lt;nomeBranch&gt;
+					git merge <nomeBranch>
 			
 			
 					Continuar o rebase (Após alterar/corrigir arquivo/conflito)
@@ -299,7 +283,7 @@ branch. Em vez de colocar abaixo, coloca acima.
 	
 			
 					Fazer merge da branch principal com a sua branch
-					git merge &lt;suaBranch&gt;
+					git merge <suaBranch>
 			
 	
 
@@ -313,15 +297,15 @@ branch. Em vez de colocar abaixo, coloca acima.
 	
 			
 					Ir para a branch principal
-					git checkout &lt;main&gt;
+					git checkout <main>
 			
 			
 					Fazer o merge
-					git merge &lt;suaBranch&gt;
+					git merge <suaBranch>
 			
 			
 					Voltar para a sua branch
-					git checkout &lt;suaBranch&gt;
+					git checkout <suaBranch>
 			
 			
 					Traser a branch origin/main para a branch main
@@ -381,7 +365,7 @@ Enviar projeto para repositório no github via SSH
 	
 			
 					Conectar diretório ao repositório
-					git remote add origin \&lt;endereçoSshGit&gt;
+					git remote add origin \<endereçoSshGit>
 			
 			
 					Nomear branch do repositótio
@@ -389,11 +373,11 @@ Enviar projeto para repositório no github via SSH
 			
 			
 					Envia e conecta a branch local a branch remoto
-					git push -u origin &lt;nome-da-branch&gt;
+					git push -u origin <nome-da-branch>
 			
 			
 					Clonar repositório remoto
-					git clone \&lt;endereçoSshGit&gt;
+					git clone \<endereçoSshGit>
 			
 			
 					Trazer/recuperar informações remotas de vários branches
@@ -417,11 +401,11 @@ Enviar projeto para repositório no github via SSH
 			
 			
 					Fazer fetch e merge em branch especifica
-					git pull origin \&lt;nome-branch&gt;
+					git pull origin \<nome-branch>
 			
 			
 					Fazer fetch em branch especifica
-					git fetch origin \&lt;nome-branch&gt;
+					git fetch origin \<nome-branch>
 			
 	
 
@@ -465,15 +449,15 @@ Mais comandos
 			
 			
 					Criar arquivo no repositório
-					touch &lt;nomeArquivo&gt;
+					touch <nomeArquivo>
 			
 			
 					Criar uma linha de texto no arquivo
-					echo &ldquo;linha de text&rdquo; &raquo; &lt;nomeArquivo&gt;
+					echo &ldquo;linha de text&rdquo; &#187; <nomeArquivo>
 			
 			
 					Mostrar conteúdo do arquivo
-					cat &lt;nomeArquivo&gt;
+					cat <nomeArquivo>
 			
 			
 					Enviar commit para o github
@@ -498,7 +482,7 @@ Mais comandos do Git
 			
 			
 					Ver duas ultimas alterações
-					git log -p -2 (-2 ou -1 &hellip;etc)
+					git log -p -2 (-2 ou -1 &mldr;etc)
 			
 			
 					Ver quais arquivos foram alterados
@@ -514,7 +498,7 @@ Mais comandos do Git
 			
 			
 					Monitorar arquivo específico
-					git log &ndash; &lt;nomeArquvio&gt;
+					git log &ndash; <nomeArquvio>
 			
 			
 					Mostrar gráfico das alterações
@@ -575,7 +559,7 @@ Exemplo de histórico com formatação específica
 
 
 # hash abreviada, autor, data e comentário
-git log --pretty=format:&#34;%h - %an, %ar : %s&#34;
+git log --pretty=format:"%h - %an, %ar : %s"
   
     
 
@@ -588,10 +572,10 @@ Exemplo de histórico com formatação específica, com hash não abreviada
 
 
 # Exibe id (hash) compelto dos commits
-git log --pretty=format:&#34;%H&#34;
+git log --pretty=format:"%H"
 
 # outra forma (a flag -1 indica o numero de commits a serem mostrados)
-git log -1 --format=&#34;%H&#34;  # Exibe id (hash) completo do primeiro commit
+git log -1 --format="%H"  # Exibe id (hash) completo do primeiro commit
   
     
 
@@ -622,7 +606,7 @@ Git Config
 			
 			
 					Configurar user name
-					git config user.name &lt;nomeUsuario&gt;
+					git config user.name <nomeUsuario>
 			
 			
 					Configurar user email
@@ -633,12 +617,12 @@ Git Config
 					
 			
 			
-					alias.conf -&gt; conf = nome do atalho
+					alias.conf -> conf = nome do atalho
 					git config &ndash;local alias.conf &lsquo;config &ndash;local -l&rsquo;
 			
 			
 					Deletar atalho feito no git
-					git config &ndash;unset alias.conf (alias.conf -&gt; nome atalho)
+					git config &ndash;unset alias.conf (alias.conf -> nome atalho)
 			
 	
 
@@ -648,8 +632,8 @@ Adicionar co-autor no commit
 
 
 git commit -m &#39;Menssagem sobre o arquivo!
-&gt;
-&gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39;
+>
+> Co-authored-by: nome <email.@email.com>&#39;
   
     
 
@@ -692,14 +676,14 @@ Tags de commit no git
 	
 			
 					Criar uma tag
-					git tag -a v1.0 -m &lt;nomeVersao&gt;
+					git tag -a v1.0 -m <nomeVersao>
 			
 			
 					v1.0
 					é o nome da Tag
 			
 			
-					&lt;nomeVersao&gt;
+					<nomeVersao>
 					é mensagem da tag
 			
 			
@@ -720,7 +704,7 @@ Tags de commit no git
 			
 			
 					Enviar tag criada para o repositório remoto
-					git push origin &lt;nome-da-tag&gt;
+					git push origin <nome-da-tag>
 			
 	
 
@@ -757,1259 +741,89 @@ Menssagem padronizada do comiit no git:
 	
 
     
-  ">
-<meta
-  property="og:type"
-  content="
+  '><meta property="og:type" content="
     article
-  ">
-<meta property="og:url" content="http://localhost:1313/blog/comandos-git/"><meta property="article:section" content="blog">
-
-<meta
-  property="article:published_time"
-  content="2026-06-24T11:47:10+01:00">
-
-
-<meta
-  property="article:modified_time"
-  content="2026-06-24T11:47:10+01:00">
-
-
-
-	<meta itemprop="name" content="Comandos Git">
-	<meta itemprop="description" content="Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
-Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add &lt;arquivo&gt; Desfazer preparação de arquivo a ser commitado git rm –cached &lt;arquivo&gt; Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch &lt;nome&gt; Cria uma nova branch e muda para a branch criada git checkout -b &lt;nomeBranch&gt; Mudar de branch git checkout &lt;nomeBranch&gt; Ir para um commit específico git checkout &lt;numeroCommit&gt; Apagar uma branch git branch -d &lt;nomeBranch&gt; Reverte o arquivo para o ultimo commit git checkout -- &lt;nomeArquivo&gt; Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD &lt;nomeArquivo&gt; Mais sobre Branch Ação Comando Renomear branch local git branch -m &lt;novoNome&gt; Renomear uma branch enquanto esta em outra git branch -m &lt;nomeAntigo&gt; &lt;novoNome&gt; Renomear branch default global git config –global init.defaultBranch &lt;novo-nome&gt; Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
+  "><meta property="og:url" content="https://blog.faleite.xyz/blog/comandos-git/"><meta property="article:section" content="blog"><meta property="article:published_time" content="2026-06-24T11:47:10+01:00"><meta property="article:modified_time" content="2026-06-24T11:47:10+01:00"><meta itemprop=name content="Comandos Git"><meta itemprop=description content='Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
+Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add <arquivo> Desfazer preparação de arquivo a ser commitado git rm –cached <arquivo> Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch <nome> Cria uma nova branch e muda para a branch criada git checkout -b <nomeBranch> Mudar de branch git checkout <nomeBranch> Ir para um commit específico git checkout <numeroCommit> Apagar uma branch git branch -d <nomeBranch> Reverte o arquivo para o ultimo commit git checkout -- <nomeArquivo> Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD <nomeArquivo> Mais sobre Branch Ação Comando Renomear branch local git branch -m <novoNome> Renomear uma branch enquanto esta em outra git branch -m <nomeAntigo> <novoNome> Renomear branch default global git config –global init.defaultBranch <novo-nome> Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
 outro branch Produzem quase o mesmo resultado final O git merge cria uma nova ramificação que contém as alterações de todas
 as ramificações combinadas O git rebase pega todas as alterações de uma ramificação e aplica as mudanças
 diretamente na outra ramificação, como se o trabalho tivesse sido feito em
 sequência, em uma única ramificação. Rebase Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits
 e resolver tudo o que acontecer. Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e
-volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase &lt;main&gt; Emcorporar modificação de uma outra branch na branch master git merge &lt;nomeBranch&gt; Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
+volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase <main> Emcorporar modificação de uma outra branch na branch master git merge <nomeBranch> Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
 um commit de merge (uma fundição), que vai colocar todos esses commits no meu
-branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge &lt;suaBranch&gt; Observações Etapas Ir para a branch principal git checkout &lt;main&gt; Fazer o merge git merge &lt;suaBranch&gt; Voltar para a sua branch git checkout &lt;suaBranch&gt; Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
+branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge <suaBranch> Observações Etapas Ir para a branch principal git checkout <main> Fazer o merge git merge <suaBranch> Voltar para a sua branch git checkout <suaBranch> Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
 de volta. Permite deixar de lado modificações feitas, quando você precisa urgentemente
 fazer outra coisa. É como se você criasse pequenas branches. Permite limpar rapidamente o git para poder fazer uma operação nele
 e voltar. Git stash pega tudo que foi modificado na pasta, cria um pequeno commit
 e guarda Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado
-para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \&lt;endereçoSshGit&gt; Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin &lt;nome-da-branch&gt; Clonar repositório remoto git clone \&lt;endereçoSshGit&gt; Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \&lt;nome-branch&gt; Fazer fetch em branch especifica git fetch origin \&lt;nome-branch&gt; Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch &lt;nomeArquivo&gt; Criar uma linha de texto no arquivo echo “linha de text” » &lt;nomeArquivo&gt; Mostrar conteúdo do arquivo cat &lt;nomeArquivo&gt; Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – &lt;nomeArquvio&gt; Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:&#34;%h - %an, %ar : %s&#34; Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:&#34;%H&#34; # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format=&#34;%H&#34; # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name &lt;nomeUsuario&gt; Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -&gt; conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -&gt; nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! &gt; &gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m &lt;nomeVersao&gt; v1.0 é o nome da Tag &lt;nomeVersao&gt; é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin &lt;nome-da-tag&gt; Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit">
-	<meta itemprop="datePublished" content="2026-06-24T11:47:10+01:00">
-	<meta itemprop="dateModified" content="2026-06-24T11:47:10+01:00">
-	<meta itemprop="wordCount" content="1415">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Comandos Git">
-	<meta name="twitter:description" content="Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
-Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add &lt;arquivo&gt; Desfazer preparação de arquivo a ser commitado git rm –cached &lt;arquivo&gt; Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch &lt;nome&gt; Cria uma nova branch e muda para a branch criada git checkout -b &lt;nomeBranch&gt; Mudar de branch git checkout &lt;nomeBranch&gt; Ir para um commit específico git checkout &lt;numeroCommit&gt; Apagar uma branch git branch -d &lt;nomeBranch&gt; Reverte o arquivo para o ultimo commit git checkout -- &lt;nomeArquivo&gt; Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD &lt;nomeArquivo&gt; Mais sobre Branch Ação Comando Renomear branch local git branch -m &lt;novoNome&gt; Renomear uma branch enquanto esta em outra git branch -m &lt;nomeAntigo&gt; &lt;novoNome&gt; Renomear branch default global git config –global init.defaultBranch &lt;novo-nome&gt; Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
+para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \<endereçoSshGit> Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin <nome-da-branch> Clonar repositório remoto git clone \<endereçoSshGit> Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \<nome-branch> Fazer fetch em branch especifica git fetch origin \<nome-branch> Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch <nomeArquivo> Criar uma linha de texto no arquivo echo “linha de text” » <nomeArquivo> Mostrar conteúdo do arquivo cat <nomeArquivo> Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – <nomeArquvio> Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:"%h - %an, %ar : %s" Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:"%H" # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format="%H" # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name <nomeUsuario> Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -> conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -> nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! > > Co-authored-by: nome <email.@email.com>&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m <nomeVersao> v1.0 é o nome da Tag <nomeVersao> é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin <nome-da-tag> Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit'><meta itemprop=datePublished content="2026-06-24T11:47:10+01:00"><meta itemprop=dateModified content="2026-06-24T11:47:10+01:00"><meta itemprop=wordCount content="1415"><meta name=twitter:card content="summary"><meta name=twitter:title content="Comandos Git"><meta name=twitter:description content='Git“É um consenso que a verdade está em um lugar, e geralmente está longe.”
+Principais Ações Ação Comando Transformar uma pasta em pasta git git init (cria pasta .git na pasta atual) Saber onde você esta no git git status Preparar arquivo a ser enviado a um commit git add <arquivo> Desfazer preparação de arquivo a ser commitado git rm –cached <arquivo> Fazer registro do arquivo (commit) git commit -m ‘Menssagem sobre o arquivo!’ Ver todas as alterações feitas no git git log (digite q para sair do git log) Ver diferenças entre as versões dos arquivos git diff Mostrar difença entre uma branch e outra git diff main origin/main Preparar todos os arquivos para um commit git add . Guardar todos arquivos trackeados pelo git git add -u Branch e Checkout Ação Comando Mostrar branches existentes locais git branch Mostrar branches existentes locais e remotas git branch -a Criar uma nova branch git branch <nome> Cria uma nova branch e muda para a branch criada git checkout -b <nomeBranch> Mudar de branch git checkout <nomeBranch> Ir para um commit específico git checkout <numeroCommit> Apagar uma branch git branch -d <nomeBranch> Reverte o arquivo para o ultimo commit git checkout -- <nomeArquivo> Desfazer preparação de arquivos modificados para o próximo commit git reset HEAD <nomeArquivo> Mais sobre Branch Ação Comando Renomear branch local git branch -m <novoNome> Renomear uma branch enquanto esta em outra git branch -m <nomeAntigo> <novoNome> Renomear branch default global git config –global init.defaultBranch <novo-nome> Mostrar nome e ultimo commit da branch local git branch -v Mostrar nome e ultimo commit da branch remota git branch -vv Merge e Rebase Estas duas ferramentas permitem atualizar seu branch local a partir de
 outro branch Produzem quase o mesmo resultado final O git merge cria uma nova ramificação que contém as alterações de todas
 as ramificações combinadas O git rebase pega todas as alterações de uma ramificação e aplica as mudanças
 diretamente na outra ramificação, como se o trabalho tivesse sido feito em
 sequência, em uma única ramificação. Rebase Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits
 e resolver tudo o que acontecer. Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e
-volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase &lt;main&gt; Emcorporar modificação de uma outra branch na branch master git merge &lt;nomeBranch&gt; Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
+volta ao branch principal e aplica todos os commits por cima. Ação Comando Faça o rebase do main no meu branch git rebase <main> Emcorporar modificação de uma outra branch na branch master git merge <nomeBranch> Continuar o rebase (Após alterar/corrigir arquivo/conflito) git rebase –continue Alterar o commit (mensagem do commit) git commit –amend Caso não funcione git commit –amend git commit –amend -m “mensagem” Alterar arquivo do ultimo commit sem alterar mensagem no git git commit –amend –no-edit Mais comandos Ação Comando Editar em sequência vários commits git rebase -i HEAD~4 Observações / Etapas HEAD~4 = edita os 4 ultimos comites Para editar os commits substitua a palavra ‘pick’ por ’edit’ Repita os dois ultimos passos até concluir o rebase. Ação Comando Comprimir vários commits em um unico commit git rebase -i HEAD~4 Observações / Etapas -i HEAD~4 faz o squash nos 4 ultimos commits Para juntar os commits ao commit anterior substitua a palavra ‘pick’ por ‘squash’ Alterar o commit: git commit –amend Continuar o rebase para fazer o squash: git rebase –continue Merge Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer
 um commit de merge (uma fundição), que vai colocar todos esses commits no meu
-branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge &lt;suaBranch&gt; Observações Etapas Ir para a branch principal git checkout &lt;main&gt; Fazer o merge git merge &lt;suaBranch&gt; Voltar para a sua branch git checkout &lt;suaBranch&gt; Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
+branch. Em vez de colocar abaixo, coloca acima. Ação Comando Fazer merge da branch principal com a sua branch git merge <suaBranch> Observações Etapas Ir para a branch principal git checkout <main> Fazer o merge git merge <suaBranch> Voltar para a sua branch git checkout <suaBranch> Traser a branch origin/main para a branch main git merge origin/main Stash É uma ferramenta que permite guardar rapidamente as modificações e trazê-las
 de volta. Permite deixar de lado modificações feitas, quando você precisa urgentemente
 fazer outra coisa. É como se você criasse pequenas branches. Permite limpar rapidamente o git para poder fazer uma operação nele
 e voltar. Git stash pega tudo que foi modificado na pasta, cria um pequeno commit
 e guarda Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado
-para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \&lt;endereçoSshGit&gt; Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin &lt;nome-da-branch&gt; Clonar repositório remoto git clone \&lt;endereçoSshGit&gt; Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \&lt;nome-branch&gt; Fazer fetch em branch especifica git fetch origin \&lt;nome-branch&gt; Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch &lt;nomeArquivo&gt; Criar uma linha de texto no arquivo echo “linha de text” » &lt;nomeArquivo&gt; Mostrar conteúdo do arquivo cat &lt;nomeArquivo&gt; Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – &lt;nomeArquvio&gt; Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:&#34;%h - %an, %ar : %s&#34; Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:&#34;%H&#34; # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format=&#34;%H&#34; # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name &lt;nomeUsuario&gt; Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -&gt; conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -&gt; nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! &gt; &gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m &lt;nomeVersao&gt; v1.0 é o nome da Tag &lt;nomeVersao&gt; é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin &lt;nome-da-tag&gt; Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit">
-<link href="/css/compiled/main.css" rel="stylesheet" />
-    <link href="/css/variables.css" rel="stylesheet" />
-    <link href="/css/custom.css" rel="stylesheet" />
-
-  
-<script src="/js/main-head.js" integrity=""></script>
-
-  
-  
-  </head>
-<body>
-    <a href="#content" class="hx:sr-only hx:focus-visible:not-sr-only hx:focus-visible:fixed hx:focus-visible:z-50 hx:focus-visible:top-2 hx:focus-visible:left-2 hx:focus-visible:bg-primary-500 hx:focus-visible:text-white hx:focus-visible:px-4 hx:focus-visible:py-2 hx:focus-visible:rounded-md hx:focus-visible:text-sm hx:focus-visible:font-medium">Skip to content</a><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
-  <div
-    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
-  ></div>
-
-  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-1 hx:md:gap-2 hx:h-[var(--hextra-navbar-height)] hx:px-6">
-    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="https://www.faleite.xyz/">
-    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/images/logo.svg" alt="Logo" height="20" width="20" />
-    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/images/logo-dark.svg" alt="Dark Logo" height="20" width="20" />
-    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none">faleite.xyz</span>
-</a>
-<a
-  title=""
-  href="/blog"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"
-><span class="hx:inline-flex hx:items-center"><svg height="1em" class="hx:inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span><span class="hx:text-center">Blog</span>
-</a><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="Change theme"
-    data-state="closed"
-    data-location="top"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:p-1 hx:md:p-2 hx:grow"
-    type="button"
-    aria-label="Change theme"
-    aria-expanded="false"
-    aria-haspopup="menu"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=24 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=24 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><svg height=24 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-</div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-    role="menu"
-  >
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="true"
-        tabindex="-1"
-        data-item="light"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Light
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="dark"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Dark
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="system"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        System
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-  </ul>
-</div>
-<button
-    type="button"
-    class="hextra-search-trigger"
-    data-search-open
-    aria-haspopup="dialog"
-    aria-controls="hextra-search-dialog"
-    aria-label="Search..."
-  ><svg class="hextra-search-trigger-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span class="hextra-search-trigger-label">Search...</span>
-    <kbd class="hextra-search-trigger-kbd">CTRL K</kbd>
-  </button>
-          <a class="hx:p-1 hx:md:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com/faleite" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
-  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
-</svg>
-<span class="hx:sr-only">GitHub</span>
-          </a><button type="button" aria-label="Menu" aria-expanded="false" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-1 hx:rounded-sm hx:p-1 hx:active:bg-gray-400/20 hx:md:hidden hx:hextra-focus-visible-inset"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
-  </nav>
-</div>
-
-  <div class="hx:mx-auto hx:flex hextra-max-page-width">
-    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:hidden hx:xl:block">
-  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
-    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
-      
-      
-              <li class="open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
-    <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/blog/"
-      
-    >
-      <span class="hx:min-w-0 [word-break:break-word]">Blog</span>
-    </a>
-      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="Toggle section" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
-  </div><div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
-        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
-    <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-      href="/blog/comandos-git/"
-      
-    >
-      <span class="hx:min-w-0 [word-break:break-word]">Comandos Git</span>
-    </a>
-  </div>
-  
-    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-              <a
-                href="#"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              ></a>
-            </li>
-          <li>
-              <a
-                href="#mais-comandos-do-git"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >Mais comandos do Git</a>
-            </li>
-          </ul>
-  
-              
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
-    <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/blog/ambiente-virtual-linux-server/"
-      
-    >
-      <span class="hx:min-w-0 [word-break:break-word]">Ambiente virtual com linux server</span>
-    </a>
-  </div>
-              
-            </li></ul>
-      </div></li>
-    </ul>
-
-    <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
-  
-  
-    <div class="hx:md:hidden  hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:grow hx:flex-col"><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="Change theme"
-    data-state="closed"
-    data-location="bottom"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow"
-    type="button"
-    aria-label="Change theme"
-    aria-expanded="false"
-    aria-haspopup="menu"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">Light</span><svg height=12 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">Dark</span><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">System</span></div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-    role="menu"
-  >
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="true"
-        tabindex="-1"
-        data-item="light"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Light
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="dark"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Dark
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="system"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        System
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-  </ul>
-</div>
-</div></div></aside>
-    
-<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="Table of contents">
-    <div class="hextra-scrollbar hx:sticky hx:top-[var(--hextra-navbar-height)] hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--hextra-navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#principais-a%c3%a7%c3%b5es">Principais Ações
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#branch-e-checkout">Branch e Checkout
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#mais-sobre-branch">Mais sobre Branch
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#merge-e-rebase">Merge e Rebase
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#rebase">Rebase
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#mais-comandos">Mais comandos
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#merge">Merge
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#stash">Stash
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#uso-remoto-do-git">Uso remoto do git
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#mais-comandos-1">Mais comandos
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#mais-comandos-do-git">Mais comandos do Git
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#git-log">Git Log
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#git-log-detalhado">Git log detalhado
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#git-config">Git Config
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#os-tr%c3%aas-est%c3%a1gios-do-git">Os três estágios do git
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#tags-de-commit-no-git">Tags de commit no git
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#menssagem-padronizada-do-comiit-no-git">Menssagem padronizada do comiit no git:
-        </a>
-      </li></ul>
-      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
-        <button id="backToTop" tabindex="-1" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
-          <span>Scroll to top</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-
-    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
-        
-        <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
-        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/blog/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Artigos de FaLeite</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Comandos Git</div>
-  </div>
-
-        
-          <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mt-2">
-            <h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Comandos Git</h1>
-            
-          </div>
-        
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">24 de junho de 2026</span></div>
-        <div class="content">
-          
-          <h1>Git</h1><p><em>&ldquo;É um consenso que a verdade está em um lugar, e geralmente está longe.&rdquo;</em></p>
-<h3>Principais Ações<span class="hx:absolute hx:-mt-20" id="principais-ações"></span>
-    <a href="#principais-a%c3%a7%c3%b5es" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Transformar uma pasta em pasta git</td>
-					<td><strong>git init</strong> (cria pasta <strong>.git</strong> na pasta atual)</td>
-			</tr>
-			<tr>
-					<td>Saber onde você esta no git</td>
-					<td><strong>git status</strong></td>
-			</tr>
-			<tr>
-					<td>Preparar arquivo a ser enviado a um commit</td>
-					<td><strong>git add &lt;arquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Desfazer preparação de arquivo a ser commitado</td>
-					<td><strong>git rm &ndash;cached &lt;arquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Fazer registro do arquivo (commit)</td>
-					<td><strong>git commit -m &lsquo;Menssagem sobre o arquivo!&rsquo;</strong></td>
-			</tr>
-			<tr>
-					<td>Ver todas as alterações feitas no git</td>
-					<td><strong>git log</strong> (digite <strong>q</strong> para sair do git log)</td>
-			</tr>
-			<tr>
-					<td>Ver diferenças entre as versões dos arquivos</td>
-					<td><strong>git diff</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar difença entre uma branch e outra</td>
-					<td><strong>git diff main origin/main</strong></td>
-			</tr>
-			<tr>
-					<td>Preparar todos os arquivos para um commit</td>
-					<td><strong>git add .</strong></td>
-			</tr>
-			<tr>
-					<td>Guardar todos arquivos trackeados pelo git</td>
-					<td><strong>git add -u</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Branch e Checkout<span class="hx:absolute hx:-mt-20" id="branch-e-checkout"></span>
-    <a href="#branch-e-checkout" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Mostrar branches existentes locais</td>
-					<td><strong>git branch</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar branches existentes locais e remotas</td>
-					<td><strong>git branch -a</strong></td>
-			</tr>
-			<tr>
-					<td>Criar uma nova branch</td>
-					<td><strong>git branch &lt;nome&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Cria uma nova branch e muda para a branch criada</td>
-					<td><strong>git checkout -b &lt;nomeBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Mudar de branch</td>
-					<td><strong>git checkout &lt;nomeBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Ir para um commit específico</td>
-					<td><strong>git checkout &lt;numeroCommit&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Apagar uma branch</td>
-					<td><strong>git branch -d &lt;nomeBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Reverte o arquivo para o ultimo commit</td>
-					<td><strong>git checkout -- &lt;nomeArquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Desfazer preparação de arquivos modificados para o próximo commit</td>
-					<td><strong>git reset HEAD &lt;nomeArquivo&gt;</strong></td>
-			</tr>
-	</tbody>
-</table>
-<h3>Mais sobre Branch<span class="hx:absolute hx:-mt-20" id="mais-sobre-branch"></span>
-    <a href="#mais-sobre-branch" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Renomear branch local</td>
-					<td><strong>git branch -m &lt;novoNome&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Renomear uma branch enquanto esta em outra</td>
-					<td><strong>git branch -m &lt;nomeAntigo&gt; &lt;novoNome&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Renomear branch default global</td>
-					<td><strong>git config &ndash;global init.defaultBranch &lt;novo-nome&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar nome e ultimo commit da branch local</td>
-					<td><strong>git branch -v</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar nome e ultimo commit da branch remota</td>
-					<td><strong>git branch -vv</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Merge e Rebase<span class="hx:absolute hx:-mt-20" id="merge-e-rebase"></span>
-    <a href="#merge-e-rebase" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li>Estas duas ferramentas permitem atualizar seu branch local a partir de<br>
-outro branch</li>
-<li>Produzem quase o mesmo resultado final</li>
-<li>O git merge cria uma nova ramificação que contém as alterações de todas<br>
-as ramificações combinadas</li>
-<li>O git rebase pega todas as alterações de uma ramificação e aplica as mudanças<br>
-diretamente na outra ramificação, como se o trabalho tivesse sido feito em<br>
-sequência, em uma única ramificação.</li>
-</ul>
-<h4>Rebase<span class="hx:absolute hx:-mt-20" id="rebase"></span>
-    <a href="#rebase" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li>Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits<br>
-e resolver tudo o que acontecer.</li>
-<li>Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e<br>
-volta ao branch principal e aplica todos os commits por cima.</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Faça o rebase do main no meu branch</td>
-					<td><strong>git rebase &lt;main&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Emcorporar modificação de uma outra branch na branch master</td>
-					<td><strong>git merge &lt;nomeBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Continuar o rebase (Após alterar/corrigir arquivo/conflito)</td>
-					<td><strong>git rebase &ndash;continue</strong></td>
-			</tr>
-			<tr>
-					<td>Alterar o commit (mensagem do commit)</td>
-					<td><strong>git commit &ndash;amend</strong></td>
-			</tr>
-			<tr>
-					<td>Caso não funcione git commit &ndash;amend</td>
-					<td><strong>git commit &ndash;amend -m &ldquo;mensagem&rdquo;</strong></td>
-			</tr>
-			<tr>
-					<td>Alterar arquivo do ultimo commit sem alterar mensagem no git</td>
-					<td><strong>git commit &ndash;amend &ndash;no-edit</strong></td>
-			</tr>
-	</tbody>
-</table>
-<h4>Mais comandos<span class="hx:absolute hx:-mt-20" id="mais-comandos"></span>
-    <a href="#mais-comandos" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Editar em sequência vários commits</td>
-					<td><strong>git rebase -i HEAD~4</strong></td>
-			</tr>
-	</tbody>
-</table>
-<table>
-	<thead>
-			<tr>
-					<th>Observações / Etapas</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><em>HEAD~4 = edita os 4 ultimos comites</em></td>
-			</tr>
-			<tr>
-					<td><em>Para editar os commits substitua a palavra &lsquo;pick&rsquo; por &rsquo;edit&rsquo;</em></td>
-			</tr>
-			<tr>
-					<td><em>Repita os dois ultimos passos até concluir o rebase.</em></td>
-			</tr>
-	</tbody>
-</table>
-<table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Comprimir vários commits em um unico commit</td>
-					<td><strong>git rebase -i HEAD~4</strong></td>
-			</tr>
-	</tbody>
-</table>
-<table>
-	<thead>
-			<tr>
-					<th>Observações / Etapas</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><strong>-i HEAD~4</strong> faz o squash nos 4 ultimos commits</td>
-			</tr>
-			<tr>
-					<td>Para juntar os commits ao commit anterior substitua a palavra &lsquo;pick&rsquo; por &lsquo;squash&rsquo;</td>
-			</tr>
-			<tr>
-					<td>Alterar o commit: <strong>git commit &ndash;amend</strong></td>
-			</tr>
-			<tr>
-					<td>Continuar o rebase para fazer o squash: <strong>git rebase &ndash;continue</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h4>Merge<span class="hx:absolute hx:-mt-20" id="merge"></span>
-    <a href="#merge" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li>Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer<br>
-um commit de merge (uma fundição), que vai colocar todos esses commits no meu<br>
-branch. Em vez de colocar abaixo, coloca acima.</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Fazer merge da branch principal com a sua branch</td>
-					<td><strong>git merge &lt;suaBranch&gt;</strong></td>
-			</tr>
-	</tbody>
-</table>
-<table>
-	<thead>
-			<tr>
-					<th>Observações</th>
-					<th>Etapas</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Ir para a branch principal</td>
-					<td><strong>git checkout &lt;main&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Fazer o merge</td>
-					<td><strong>git merge &lt;suaBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Voltar para a sua branch</td>
-					<td><strong>git checkout &lt;suaBranch&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Traser a branch origin/main para a branch main</td>
-					<td><strong>git merge origin/main</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Stash<span class="hx:absolute hx:-mt-20" id="stash"></span>
-    <a href="#stash" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li>É uma ferramenta que permite guardar rapidamente as modificações e trazê-las<br>
-de volta.</li>
-<li>Permite deixar de lado modificações feitas, quando você precisa urgentemente<br>
-fazer outra coisa.</li>
-<li>É como se você criasse pequenas branches.</li>
-<li>Permite limpar rapidamente o git para poder fazer uma operação nele<br>
-e voltar.</li>
-<li>Git stash pega tudo que foi modificado na pasta, cria um pequeno commit<br>
-e guarda</li>
-<li>Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado<br>
-para o outro.</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Criar um stash</td>
-					<td><strong>git stash</strong></td>
-			</tr>
-			<tr>
-					<td>Ver o que há no stash</td>
-					<td><strong>git stash list</strong></td>
-			</tr>
-			<tr>
-					<td>Reaplicar commit stash</td>
-					<td><strong>git stash pop</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Uso remoto do git<span class="hx:absolute hx:-mt-20" id="uso-remoto-do-git"></span>
-    <a href="#uso-remoto-do-git" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li>Enviar projeto para repositório no github via SSH</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Conectar diretório ao repositório</td>
-					<td><code>git remote add origin \&lt;endereçoSshGit&gt;</code></td>
-			</tr>
-			<tr>
-					<td>Nomear branch do repositótio</td>
-					<td><code>git branch -M main</code></td>
-			</tr>
-			<tr>
-					<td>Envia e conecta a branch local a branch remoto</td>
-					<td><code>git push -u origin &lt;nome-da-branch&gt;</code></td>
-			</tr>
-			<tr>
-					<td>Clonar repositório remoto</td>
-					<td><code>git clone \&lt;endereçoSshGit&gt;</code></td>
-			</tr>
-			<tr>
-					<td>Trazer/recuperar informações remotas de vários branches</td>
-					<td><code>git fetch</code></td>
-			</tr>
-			<tr>
-					<td>Trazer/recuperar informações remotas de todos as branches</td>
-					<td><code>git fetch --all</code></td>
-			</tr>
-			<tr>
-					<td>Atualizar informações na branch main trazidas pelo <code>fetch</code></td>
-					<td><code>git rebase origin/main</code></td>
-			</tr>
-			<tr>
-					<td>Fazer <code>fetch</code> e <code>rebase</code> ao mesmo tempo</td>
-					<td><code>git pull --rebase</code></td>
-			</tr>
-			<tr>
-					<td>Fazer <code>fetch</code> e <code>merge</code> ao mesmo tempo</td>
-					<td><code>git pull</code></td>
-			</tr>
-			<tr>
-					<td>Fazer <code>fetch</code> e <code>merge</code> em branch especifica</td>
-					<td><code>git pull origin \&lt;nome-branch&gt;</code></td>
-			</tr>
-			<tr>
-					<td>Fazer <code>fetch</code> em branch especifica</td>
-					<td><code>git fetch origin \&lt;nome-branch&gt;</code></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<table>
-	<thead>
-			<tr>
-					<th>Observações</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Endereço ssh é parecido com: <em><a
-    href="mailto:git@github.com">git@github.com</a>:faleite/tutors.git</em></td>
-			</tr>
-	</tbody>
-</table>
-<h4>Mais comandos<span class="hx:absolute hx:-mt-20" id="mais-comandos-1"></span>
-    <a href="#mais-comandos-1" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Mostrar nome do repositótio remoto</td>
-					<td><strong>git remote</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar caminho do repositótio remoto</td>
-					<td><strong>git remote -v</strong></td>
-			</tr>
-			<tr>
-					<td>Fazer <strong>fetch</strong> e <strong>rebase</strong> ao mesmo tempo</td>
-					<td><strong>git pull &ndash;rebase &ndash;origin main</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar commits remoto</td>
-					<td><strong>git log origin/main</strong></td>
-			</tr>
-			<tr>
-					<td>Criar arquivo no repositório</td>
-					<td><strong>touch &lt;nomeArquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Criar uma linha de texto no arquivo</td>
-					<td><strong>echo &ldquo;linha de text&rdquo; &raquo; &lt;nomeArquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar conteúdo do arquivo</td>
-					<td><strong>cat &lt;nomeArquivo&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Enviar commit para o github</td>
-					<td><strong>git push</strong></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h2>Mais comandos do Git<span class="hx:absolute hx:-mt-20" id="mais-comandos-do-git"></span>
-    <a href="#mais-comandos-do-git" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Git Log<span class="hx:absolute hx:-mt-20" id="git-log"></span>
-    <a href="#git-log" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Ver cada uma das alterações que ja foram feitas</td>
-					<td><strong>git log -p</strong></td>
-			</tr>
-			<tr>
-					<td>Ver duas ultimas alterações</td>
-					<td><strong>git log -p -2</strong> (-2 ou -1 &hellip;etc)</td>
-			</tr>
-			<tr>
-					<td>Ver quais arquivos foram alterados</td>
-					<td><strong>git log &ndash;stat</strong></td>
-			</tr>
-			<tr>
-					<td>Ver ultima inclusão e o que foi alterado</td>
-					<td><strong>git log -1 &ndash;stat</strong></td>
-			</tr>
-			<tr>
-					<td>Ver a alteração do ultimo commit</td>
-					<td><strong>git log -p -1</strong></td>
-			</tr>
-			<tr>
-					<td>Monitorar arquivo específico</td>
-					<td><strong>git log &ndash; &lt;nomeArquvio&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar gráfico das alterações</td>
-					<td><strong>git log &ndash;graph</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar gráfico das alterações em apenas uma linha</td>
-					<td><strong>git log &ndash;graph &ndash;oneline</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar cada commit em apenas uma linha</td>
-					<td><strong>git log &ndash;oneline</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar cada commit em apenas uma linha de forma resumida</td>
-					<td><strong>git log &ndash;pretty=oneline</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar os commits por autor</td>
-					<td><strong>git log &ndash;author=&ldquo;Fabricio Araujo&rdquo;</strong></td>
-			</tr>
-			<tr>
-					<td>Buscar commits por palavras</td>
-					<td><strong>git log &ndash;grep=&ldquo;Olá&rdquo;</strong></td>
-			</tr>
-	</tbody>
-</table>
-<h3>Git log detalhado<span class="hx:absolute hx:-mt-20" id="git-log-detalhado"></span>
-    <a href="#git-log-detalhado" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>flag</th>
-					<th>Ação</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>%h</td>
-					<td>Abreviação do hash</td>
-			</tr>
-			<tr>
-					<td>%an</td>
-					<td>Nome do autor</td>
-			</tr>
-			<tr>
-					<td>%ar</td>
-					<td>Data</td>
-			</tr>
-			<tr>
-					<td>%s</td>
-					<td>Comentário</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li>Exemplo de histórico com formatação específica</li>
-</ul>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># hash abreviada, autor, data e comentário</span>
-</span></span><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h - %an, %ar : %s&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="Copy code"
-    aria-label="Copy code"
-    data-copied-label="Copied!"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<ul>
-<li>Exemplo de histórico com formatação específica, com hash não abreviada</li>
-</ul>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Exibe id (hash) compelto dos commits</span>
-</span></span><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%H&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># outra forma (a flag -1 indica o numero de commits a serem mostrados)</span>
-</span></span><span style="display:flex;"><span>git log -1 --format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%H&#34;</span>  <span style="color:#75715e"># Exibe id (hash) completo do primeiro commit</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="Copy code"
-    aria-label="Copy code"
-    data-copied-label="Copied!"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<hr>
-<h3>Git Config<span class="hx:absolute hx:-mt-20" id="git-config"></span>
-    <a href="#git-config" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Listar as variáveis de configuração do git</td>
-					<td><strong>git config -l</strong> / <strong>git config &ndash;list</strong></td>
-			</tr>
-			<tr>
-					<td>Listar as variáveis local do git</td>
-					<td><strong>git config -l &ndash;local</strong></td>
-			</tr>
-			<tr>
-					<td>Listar as variáveis global do git</td>
-					<td><strong>git config -l &ndash;global</strong></td>
-			</tr>
-			<tr>
-					<td>Configurar user name</td>
-					<td><strong>git config user.name &lt;nomeUsuario&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>Configurar user email</td>
-					<td><strong>git config user.email <a
-    href="mailto:teste@gmail.com">teste@gmail.com</a></strong></td>
-			</tr>
-			<tr>
-					<td>Criar atalhos com alias do git</td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>alias.conf -&gt; conf = nome do atalho</td>
-					<td><strong>git config &ndash;local alias.conf &lsquo;config &ndash;local -l&rsquo;</strong></td>
-			</tr>
-			<tr>
-					<td>Deletar atalho feito no git</td>
-					<td><strong>git config &ndash;unset alias.conf</strong> (alias.conf -&gt; nome atalho)</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li>Adicionar co-autor no commit</li>
-</ul>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;Menssagem sobre o arquivo!
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="Copy code"
-    aria-label="Copy code"
-    data-copied-label="Copied!"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<hr>
-<h3>Os três estágios do git<span class="hx:absolute hx:-mt-20" id="os-três-estágios-do-git"></span>
-    <a href="#os-tr%c3%aas-est%c3%a1gios-do-git" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Estágio</th>
-					<th>Estado</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>WORKING TREE (DIRECTORY)</td>
-					<td>O arquivo esta apenas no diretório</td>
-			</tr>
-			<tr>
-					<td>STAGING AREA</td>
-					<td>O arquivo está numa area intermediária do git (quando passamos o <strong>git add</strong>)</td>
-			</tr>
-			<tr>
-					<td>.GIT DIRECTORY (REPOSITORY)</td>
-					<td>O arquivo esta no git (quando fazemos o <strong>commit</strong>)</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Tags de commit no git<span class="hx:absolute hx:-mt-20" id="tags-de-commit-no-git"></span>
-    <a href="#tags-de-commit-no-git" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Criar uma tag</td>
-					<td><strong>git tag -a v1.0 -m &lt;nomeVersao&gt;</strong></td>
-			</tr>
-			<tr>
-					<td>v1.0</td>
-					<td>é o nome da Tag</td>
-			</tr>
-			<tr>
-					<td>&lt;nomeVersao&gt;</td>
-					<td>é mensagem da tag</td>
-			</tr>
-			<tr>
-					<td>Listar todas as tags criadas</td>
-					<td><strong>git tag</strong></td>
-			</tr>
-			<tr>
-					<td>Listar todas as tags criadas e suas mensagens</td>
-					<td><strong>git tag -n</strong></td>
-			</tr>
-			<tr>
-					<td>Mostrar o conteúdo das tegs</td>
-					<td><strong>git show &ndash;tags</strong></td>
-			</tr>
-			<tr>
-					<td>Apagar tags</td>
-					<td><strong>git tag -d v1.0</strong> (v1.0 = nome da tag)</td>
-			</tr>
-			<tr>
-					<td>Enviar <strong>tag</strong> criada para o repositório remoto</td>
-					<td><code>git push origin &lt;nome-da-tag&gt;</code></td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h3>Menssagem padronizada do comiit no git:<span class="hx:absolute hx:-mt-20" id="menssagem-padronizada-do-comiit-no-git"></span>
-    <a href="#menssagem-padronizada-do-comiit-no-git" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
-	<thead>
-			<tr>
-					<th>Ação</th>
-					<th>Comando</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Cria arquivo com o nome</td>
-					<td><strong>.git message</strong></td>
-			</tr>
-			<tr>
-					<td>Edite uma menssagem padrão neste arquivo</td>
-					<td><strong>.git message</strong></td>
-			</tr>
-			<tr>
-					<td>Configurar o template da menssagem no git</td>
-					<td><strong>git config commit.tamplate .gitmessage</strong></td>
-			</tr>
-			<tr>
-					<td>Listar a variáveis que foram configuradas no git</td>
-					<td><strong>git config &ndash;list</strong></td>
-			</tr>
-			<tr>
-					<td>Fazer commit com menssagem padronisada</td>
-					<td><strong>git commit</strong></td>
-			</tr>
-	</tbody>
-</table>
-
-          
-        </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/blog/ambiente-virtual-linux-server/"
-        title="Ambiente virtual com linux server"
-        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Ambiente virtual com linux server</a></div>
-      </main>
-    </article>
-  </div>
-
-      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="Change theme"
-    data-state="closed"
-    data-location="bottom"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow"
-    type="button"
-    aria-label="Change theme"
-    aria-expanded="false"
-    aria-haspopup="menu"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">Light</span><svg height=12 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">Dark</span><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">System</span></div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-    role="menu"
-  >
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="true"
-        tabindex="-1"
-        data-item="light"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Light
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="dark"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        Dark
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-    <li role="none" class="hx:flex hx:flex-col">
-      <button
-        type="button"
-        role="menuitemradio"
-        aria-checked="false"
-        tabindex="-1"
-        data-item="system"
-        class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0"
-      >
-        System
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </button>
-    </li>
-  </ul>
-</div>
-</div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:mx-auto hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
-      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
-    >
-      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:font-semibold"><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
-    <span>Powered by Hextra<svg height=1em class="hx:inline-block hx:ltr:ml-1 hx:rtl:mr-1 hx:align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
-  </a></div></div>
-    </div></footer>
-    
-    <dialog
-    id="hextra-search-dialog"
-    class="hextra-search-dialog"
-    aria-label="Search..."
-  >
-    <div class="hextra-search">
-      <div class="hextra-search-input-wrapper"><svg class="hextra-search-input-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><input
-          class="hextra-search-input"
-          type="search"
-          role="combobox"
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"
-          placeholder="Search..."
-          aria-label="Search..."
-          aria-controls="hextra-search-results"
-          aria-expanded="false"
-        /><button
-          type="button"
-          class="hextra-search-input-kbd"
-          data-search-close
-          aria-label="Close"
-        >ESC</button>
-      </div>
-      <div class="hextra-search-results-viewport" data-search-viewport>
-        <div class="hextra-search-results-inner hextra-scrollbar" data-search-inner>
-          <ul
-            id="hextra-search-results"
-            class="hextra-search-results"
-            role="listbox"
-            aria-label="Search results"
-          ></ul>
-          <div class="hextra-search-empty" data-search-empty hidden>No results found.</div>
-        </div>
-      </div>
-      <div class="hextra-search-status hx:sr-only" aria-live="polite" role="status"></div>
-    </div>
-  </dialog>
-    <script defer src="/js/main.js" integrity=""></script>
-<script defer src="/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script><script defer src="/en.search.js" integrity=""></script>
-    <script defer src="/en.search-dialog.js" integrity=""></script>
-  </body>
-</html>
+para o outro. Ação Comando Criar um stash git stash Ver o que há no stash git stash list Reaplicar commit stash git stash pop Uso remoto do git Enviar projeto para repositório no github via SSH Ação Comando Conectar diretório ao repositório git remote add origin \<endereçoSshGit> Nomear branch do repositótio git branch -M main Envia e conecta a branch local a branch remoto git push -u origin <nome-da-branch> Clonar repositório remoto git clone \<endereçoSshGit> Trazer/recuperar informações remotas de vários branches git fetch Trazer/recuperar informações remotas de todos as branches git fetch --all Atualizar informações na branch main trazidas pelo fetch git rebase origin/main Fazer fetch e rebase ao mesmo tempo git pull --rebase Fazer fetch e merge ao mesmo tempo git pull Fazer fetch e merge em branch especifica git pull origin \<nome-branch> Fazer fetch em branch especifica git fetch origin \<nome-branch> Observações Endereço ssh é parecido com: git@github.com:faleite/tutors.git Mais comandos Ação Comando Mostrar nome do repositótio remoto git remote Mostrar caminho do repositótio remoto git remote -v Fazer fetch e rebase ao mesmo tempo git pull –rebase –origin main Mostrar commits remoto git log origin/main Criar arquivo no repositório touch <nomeArquivo> Criar uma linha de texto no arquivo echo “linha de text” » <nomeArquivo> Mostrar conteúdo do arquivo cat <nomeArquivo> Enviar commit para o github git push Mais comandos do Git Git Log Ação Comando Ver cada uma das alterações que ja foram feitas git log -p Ver duas ultimas alterações git log -p -2 (-2 ou -1 …etc) Ver quais arquivos foram alterados git log –stat Ver ultima inclusão e o que foi alterado git log -1 –stat Ver a alteração do ultimo commit git log -p -1 Monitorar arquivo específico git log – <nomeArquvio> Mostrar gráfico das alterações git log –graph Mostrar gráfico das alterações em apenas uma linha git log –graph –oneline Mostrar cada commit em apenas uma linha git log –oneline Mostrar cada commit em apenas uma linha de forma resumida git log –pretty=oneline Mostrar os commits por autor git log –author=“Fabricio Araujo” Buscar commits por palavras git log –grep=“Olá” Git log detalhado flag Ação %h Abreviação do hash %an Nome do autor %ar Data %s Comentário Exemplo de histórico com formatação específica # hash abreviada, autor, data e comentário git log --pretty=format:"%h - %an, %ar : %s" Exemplo de histórico com formatação específica, com hash não abreviada # Exibe id (hash) compelto dos commits git log --pretty=format:"%H" # outra forma (a flag -1 indica o numero de commits a serem mostrados) git log -1 --format="%H" # Exibe id (hash) completo do primeiro commit Git Config Ação Comando Listar as variáveis de configuração do git git config -l / git config –list Listar as variáveis local do git git config -l –local Listar as variáveis global do git git config -l –global Configurar user name git config user.name <nomeUsuario> Configurar user email git config user.email teste@gmail.com Criar atalhos com alias do git alias.conf -> conf = nome do atalho git config –local alias.conf ‘config –local -l’ Deletar atalho feito no git git config –unset alias.conf (alias.conf -> nome atalho) Adicionar co-autor no commit git commit -m &#39;Menssagem sobre o arquivo! > > Co-authored-by: nome <email.@email.com>&#39; Os três estágios do git Estágio Estado WORKING TREE (DIRECTORY) O arquivo esta apenas no diretório STAGING AREA O arquivo está numa area intermediária do git (quando passamos o git add) .GIT DIRECTORY (REPOSITORY) O arquivo esta no git (quando fazemos o commit) Tags de commit no git Ação Comando Criar uma tag git tag -a v1.0 -m <nomeVersao> v1.0 é o nome da Tag <nomeVersao> é mensagem da tag Listar todas as tags criadas git tag Listar todas as tags criadas e suas mensagens git tag -n Mostrar o conteúdo das tegs git show –tags Apagar tags git tag -d v1.0 (v1.0 = nome da tag) Enviar tag criada para o repositório remoto git push origin <nome-da-tag> Menssagem padronizada do comiit no git: Ação Comando Cria arquivo com o nome .git message Edite uma menssagem padrão neste arquivo .git message Configurar o template da menssagem no git git config commit.tamplate .gitmessage Listar a variáveis que foram configuradas no git git config –list Fazer commit com menssagem padronisada git commit'><link rel=preload href=/css/compiled/main.min.232c172294b072b69c5bcc7f5e7cb2299055b9b500e20d26d9baa2667c8ee402.css as=style integrity="sha256-IywXIpSwcracW8x/XnyyKZBVubUA4g0m2bqiZnyO5AI="><link href=/css/compiled/main.min.232c172294b072b69c5bcc7f5e7cb2299055b9b500e20d26d9baa2667c8ee402.css rel=stylesheet integrity="sha256-IywXIpSwcracW8x/XnyyKZBVubUA4g0m2bqiZnyO5AI="><script src=/js/main-head.min.bbb353731723c08eaf67b231610392e3665384806ddb6bee51d4a965494c762e.js integrity="sha256-u7NTcxcjwI6vZ7IxYQOS42ZThIBt22vuUdSpZUlMdi4="></script></head><body><a href=#content class="hx:sr-only hx:focus-visible:not-sr-only hx:focus-visible:fixed hx:focus-visible:z-50 hx:focus-visible:top-2 hx:focus-visible:left-2 hx:focus-visible:bg-primary-500 hx:focus-visible:text-white hx:focus-visible:px-4 hx:focus-visible:py-2 hx:focus-visible:rounded-md hx:focus-visible:text-sm hx:focus-visible:font-medium">Skip to content</a><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden"><div class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"></div><nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-1 hx:md:gap-2 hx:h-[var(--hextra-navbar-height)] hx:px-6"><a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href=https://www.faleite.xyz/><img class="hx:mr-2 hx:block hx:dark:hidden" src=/images/logo.svg alt=Logo height=20 width=20>
+<img class="hx:mr-2 hx:hidden hx:dark:block" src=/images/logo-dark.svg alt="Dark Logo" height=20 width=20>
+<span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none">faleite.xyz</span>
+</a><a title href=/blog class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"><span class="hx:inline-flex hx:items-center"><svg height="1em" class="hx:inline-block" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18.0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span><span class=hx:text-center>Blog</span></a><div class="hx:flex hx:justify-items-start hx:group" data-theme=light><button title="Change theme" data-state=closed data-location=top class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:p-1 hx:md:p-2 hx:grow" type=button aria-label="Change theme" aria-expanded=false aria-haspopup=menu><div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height="24" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height="24" class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003.0 0012 21a9.003 9.003.0 008.354-5.646z"/></svg><svg height="24" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996094 2C6.4986225 2.0192368 2.03125 6.5024993 2.03125 12c0 5.497501 4.4673725 9.980763 9.964844 10H12 12.0039c5.497471-.01924 9.964844-4.502499 9.964844-10 0-5.4975007-4.467373-9.9807632-9.964844-10H12zM12 4c4.417218.017598 7.96875 3.5822356 7.96875 8 0 4.417764-3.551532 7.982402-7.96875 8z"/></svg></div></button><ul class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900" style="position:fixed;inset:auto auto 0 0;margin:0;min-width:100px" data-theme=light role=menu><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=true tabindex=-1 data-item=light class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Light
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=dark class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Dark
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=system class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+System
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li></ul></div><button type=button class=hextra-search-trigger data-search-open aria-haspopup=dialog aria-controls=hextra-search-dialog aria-label=Search...><svg class="hextra-search-trigger-icon" focusable="false" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5A7 7 0 113 10a7 7 0 0114 0z"/></svg><span class=hextra-search-trigger-label>Search...</span>
+<kbd class=hextra-search-trigger-kbd>CTRL K</kbd>
+</button>
+<a class="hx:p-1 hx:md:p-2 hx:text-current" target=_blank rel=noreferrer href=https://github.com/faleite title=GitHub><svg height="24" fill="currentColor" viewBox="3 3 18 18"><path d="M12 3C7.0275 3 3 7.12937 3 12.2276c0 4.0833 2.57625 7.5321 6.15374 8.7548C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441 9.77249 20.3249 9.76125 19.5982 9.76125 18.8254 7.5 19.2522 6.915 18.2602 6.735 17.7412 6.63375 17.4759 6.19499 16.6569 5.8125 16.4378 5.4975 16.2647 5.0475 15.838 5.80124 15.8264 6.51 15.8149 7.01625 16.4954 7.18499 16.7723 7.99499 18.1679 9.28875 17.7758 9.80625 17.5335 9.885 16.9337 10.1212 16.53 10.38 16.2993 8.3775 16.0687 6.285 15.2728 6.285 11.7432c0-1.0035.34875-1.834.92249-2.47994C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794c0 0 .753749999999999-.24223 2.47499.94583.72001-.20762 1.48501-.31143 2.25001-.31143C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377c1.7212-1.19959 2.475-.94583 2.475-.94583C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326 17.4113 9.9092 17.76 10.7281 17.76 11.7432c0 3.5411-2.1037 4.3255-4.1063 4.5561C13.98 16.5877 14.2613 17.1414 14.2613 18.0065 14.2613 19.2407 14.25 20.2326 14.25 20.5441 14.25 20.7863 14.4188 21.0746 14.8688 20.9824 16.6554 20.364 18.2079 19.1866 19.3078 17.6162c1.0999-1.5705 1.6917-3.4551 1.6922-5.3886C21 7.12937 16.9725 3 12 3z"/></svg>
+<span class=hx:sr-only>GitHub</span>
+</a><button type=button aria-label=Menu aria-expanded=false class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-1 hx:rounded-sm hx:p-1 hx:active:bg-gray-400/20 hx:md:hidden hx:hextra-focus-visible-inset"><svg height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"/></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"/></g></svg></button></nav></div><div class="hx:mx-auto hx:flex hextra-max-page-width"><aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:hidden hx:xl:block"><div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]"><ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden"><li class=open><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active=false><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50" href=/blog/><span class="hx:min-w-0 [word-break:break-word]">Blog</span>
+</a><button type=button class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="Toggle section" aria-expanded=true><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"/></svg></button></div><div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden"><ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active=true><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href=/blog/comandos-git/><span class="hx:min-w-0 [word-break:break-word]">Comandos Git</span></a></div><ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li><a href=# class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"></a></li><li><a href=#mais-comandos-do-git class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Mais comandos do Git</a></li></ul></li><li class="hx:flex hx:flex-col"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active=false><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50" href=/blog/ambiente-virtual-linux-server/><span class="hx:min-w-0 [word-break:break-word]">Ambiente virtual com linux server</span></a></div></li></ul></div></li></ul><div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div><div class="hx:md:hidden hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation=show><div class="hx:flex hx:grow hx:flex-col"><div class="hx:flex hx:justify-items-start hx:group" data-theme=light><button title="Change theme" data-state=closed data-location=bottom class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow" type=button aria-label="Change theme" aria-expanded=false aria-haspopup=menu><div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height="12" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">Light</span><svg height="12" class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003.0 0012 21a9.003 9.003.0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">Dark</span><svg height="12" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996094 2C6.4986225 2.0192368 2.03125 6.5024993 2.03125 12c0 5.497501 4.4673725 9.980763 9.964844 10H12 12.0039c5.497471-.01924 9.964844-4.502499 9.964844-10 0-5.4975007-4.467373-9.9807632-9.964844-10H12zM12 4c4.417218.017598 7.96875 3.5822356 7.96875 8 0 4.417764-3.551532 7.982402-7.96875 8z"/></svg>
+<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">System</span></div></button><ul class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900" style="position:fixed;inset:auto auto 0 0;margin:0;min-width:100px" data-theme=light role=menu><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=true tabindex=-1 data-item=light class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Light
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=dark class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Dark
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=system class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+System
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li></ul></div></div></div></aside><nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="Table of contents"><div class="hextra-scrollbar hx:sticky hx:top-[var(--hextra-navbar-height)] hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--hextra-navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#principais-a%c3%a7%c3%b5es>Principais Ações</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#branch-e-checkout>Branch e Checkout</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#mais-sobre-branch>Mais sobre Branch</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#merge-e-rebase>Merge e Rebase</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#rebase>Rebase</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#mais-comandos>Mais comandos</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#merge>Merge</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#stash>Stash</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#uso-remoto-do-git>Uso remoto do git</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#mais-comandos-1>Mais comandos</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#mais-comandos-do-git>Mais comandos do Git</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#git-log>Git Log</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#git-log-detalhado>Git log detalhado</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#git-config>Git Config</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#os-tr%c3%aas-est%c3%a1gios-do-git>Os três estágios do git</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#tags-de-commit-no-git>Tags de commit no git</a></li><li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6"><a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href=#menssagem-padronizada-do-comiit-no-git>Menssagem padronizada do comiit no git:</a></li></ul><div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400"><button id=backToTop tabindex=-1 class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+<span>Scroll to top</span>
+<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg></button></div></div></nav><article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]"><main id=content class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12"><div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current"><div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100"><a href=/blog/ class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Artigos de FaLeite</a></div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Comandos Git</div></div><div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mt-2"><h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Comandos Git</h1></div><div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class=hx:mr-1>24 de junho de 2026</span></div><div class=content><h1>Git</h1><p><em>&ldquo;É um consenso que a verdade está em um lugar, e geralmente está longe.&rdquo;</em></p><h3>Principais Ações<span class="hx:absolute hx:-mt-20" id=principais-ações></span>
+<a href=#principais-a%c3%a7%c3%b5es class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Transformar uma pasta em pasta git</td><td><strong>git init</strong> (cria pasta <strong>.git</strong> na pasta atual)</td></tr><tr><td>Saber onde você esta no git</td><td><strong>git status</strong></td></tr><tr><td>Preparar arquivo a ser enviado a um commit</td><td><strong>git add &lt;arquivo></strong></td></tr><tr><td>Desfazer preparação de arquivo a ser commitado</td><td><strong>git rm &ndash;cached &lt;arquivo></strong></td></tr><tr><td>Fazer registro do arquivo (commit)</td><td><strong>git commit -m &lsquo;Menssagem sobre o arquivo!&rsquo;</strong></td></tr><tr><td>Ver todas as alterações feitas no git</td><td><strong>git log</strong> (digite <strong>q</strong> para sair do git log)</td></tr><tr><td>Ver diferenças entre as versões dos arquivos</td><td><strong>git diff</strong></td></tr><tr><td>Mostrar difença entre uma branch e outra</td><td><strong>git diff main origin/main</strong></td></tr><tr><td>Preparar todos os arquivos para um commit</td><td><strong>git add .</strong></td></tr><tr><td>Guardar todos arquivos trackeados pelo git</td><td><strong>git add -u</strong></td></tr></tbody></table><hr><h3>Branch e Checkout<span class="hx:absolute hx:-mt-20" id=branch-e-checkout></span>
+<a href=#branch-e-checkout class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Mostrar branches existentes locais</td><td><strong>git branch</strong></td></tr><tr><td>Mostrar branches existentes locais e remotas</td><td><strong>git branch -a</strong></td></tr><tr><td>Criar uma nova branch</td><td><strong>git branch &lt;nome></strong></td></tr><tr><td>Cria uma nova branch e muda para a branch criada</td><td><strong>git checkout -b &lt;nomeBranch></strong></td></tr><tr><td>Mudar de branch</td><td><strong>git checkout &lt;nomeBranch></strong></td></tr><tr><td>Ir para um commit específico</td><td><strong>git checkout &lt;numeroCommit></strong></td></tr><tr><td>Apagar uma branch</td><td><strong>git branch -d &lt;nomeBranch></strong></td></tr><tr><td>Reverte o arquivo para o ultimo commit</td><td><strong>git checkout -- &lt;nomeArquivo></strong></td></tr><tr><td>Desfazer preparação de arquivos modificados para o próximo commit</td><td><strong>git reset HEAD &lt;nomeArquivo></strong></td></tr></tbody></table><h3>Mais sobre Branch<span class="hx:absolute hx:-mt-20" id=mais-sobre-branch></span>
+<a href=#mais-sobre-branch class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Renomear branch local</td><td><strong>git branch -m &lt;novoNome></strong></td></tr><tr><td>Renomear uma branch enquanto esta em outra</td><td><strong>git branch -m &lt;nomeAntigo> &lt;novoNome></strong></td></tr><tr><td>Renomear branch default global</td><td><strong>git config &ndash;global init.defaultBranch &lt;novo-nome></strong></td></tr><tr><td>Mostrar nome e ultimo commit da branch local</td><td><strong>git branch -v</strong></td></tr><tr><td>Mostrar nome e ultimo commit da branch remota</td><td><strong>git branch -vv</strong></td></tr></tbody></table><hr><h3>Merge e Rebase<span class="hx:absolute hx:-mt-20" id=merge-e-rebase></span>
+<a href=#merge-e-rebase class=subheading-anchor aria-label="Permalink for this section"></a></h3><ul><li>Estas duas ferramentas permitem atualizar seu branch local a partir de<br>outro branch</li><li>Produzem quase o mesmo resultado final</li><li>O git merge cria uma nova ramificação que contém as alterações de todas<br>as ramificações combinadas</li><li>O git rebase pega todas as alterações de uma ramificação e aplica as mudanças<br>diretamente na outra ramificação, como se o trabalho tivesse sido feito em<br>sequência, em uma única ramificação.</li></ul><h4>Rebase<span class="hx:absolute hx:-mt-20" id=rebase></span>
+<a href=#rebase class=subheading-anchor aria-label="Permalink for this section"></a></h4><ul><li>Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits<br>e resolver tudo o que acontecer.</li><li>Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e<br>volta ao branch principal e aplica todos os commits por cima.</li></ul><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Faça o rebase do main no meu branch</td><td><strong>git rebase &lt;main></strong></td></tr><tr><td>Emcorporar modificação de uma outra branch na branch master</td><td><strong>git merge &lt;nomeBranch></strong></td></tr><tr><td>Continuar o rebase (Após alterar/corrigir arquivo/conflito)</td><td><strong>git rebase &ndash;continue</strong></td></tr><tr><td>Alterar o commit (mensagem do commit)</td><td><strong>git commit &ndash;amend</strong></td></tr><tr><td>Caso não funcione git commit &ndash;amend</td><td><strong>git commit &ndash;amend -m &ldquo;mensagem&rdquo;</strong></td></tr><tr><td>Alterar arquivo do ultimo commit sem alterar mensagem no git</td><td><strong>git commit &ndash;amend &ndash;no-edit</strong></td></tr></tbody></table><h4>Mais comandos<span class="hx:absolute hx:-mt-20" id=mais-comandos></span>
+<a href=#mais-comandos class=subheading-anchor aria-label="Permalink for this section"></a></h4><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Editar em sequência vários commits</td><td><strong>git rebase -i HEAD~4</strong></td></tr></tbody></table><table><thead><tr><th>Observações / Etapas</th></tr></thead><tbody><tr><td><em>HEAD~4 = edita os 4 ultimos comites</em></td></tr><tr><td><em>Para editar os commits substitua a palavra &lsquo;pick&rsquo; por &rsquo;edit&rsquo;</em></td></tr><tr><td><em>Repita os dois ultimos passos até concluir o rebase.</em></td></tr></tbody></table><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Comprimir vários commits em um unico commit</td><td><strong>git rebase -i HEAD~4</strong></td></tr></tbody></table><table><thead><tr><th>Observações / Etapas</th></tr></thead><tbody><tr><td><strong>-i HEAD~4</strong> faz o squash nos 4 ultimos commits</td></tr><tr><td>Para juntar os commits ao commit anterior substitua a palavra &lsquo;pick&rsquo; por &lsquo;squash&rsquo;</td></tr><tr><td>Alterar o commit: <strong>git commit &ndash;amend</strong></td></tr><tr><td>Continuar o rebase para fazer o squash: <strong>git rebase &ndash;continue</strong></td></tr></tbody></table><hr><h4>Merge<span class="hx:absolute hx:-mt-20" id=merge></span>
+<a href=#merge class=subheading-anchor aria-label="Permalink for this section"></a></h4><ul><li>Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer<br>um commit de merge (uma fundição), que vai colocar todos esses commits no meu<br>branch. Em vez de colocar abaixo, coloca acima.</li></ul><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Fazer merge da branch principal com a sua branch</td><td><strong>git merge &lt;suaBranch></strong></td></tr></tbody></table><table><thead><tr><th>Observações</th><th>Etapas</th></tr></thead><tbody><tr><td>Ir para a branch principal</td><td><strong>git checkout &lt;main></strong></td></tr><tr><td>Fazer o merge</td><td><strong>git merge &lt;suaBranch></strong></td></tr><tr><td>Voltar para a sua branch</td><td><strong>git checkout &lt;suaBranch></strong></td></tr><tr><td>Traser a branch origin/main para a branch main</td><td><strong>git merge origin/main</strong></td></tr></tbody></table><hr><h3>Stash<span class="hx:absolute hx:-mt-20" id=stash></span>
+<a href=#stash class=subheading-anchor aria-label="Permalink for this section"></a></h3><ul><li>É uma ferramenta que permite guardar rapidamente as modificações e trazê-las<br>de volta.</li><li>Permite deixar de lado modificações feitas, quando você precisa urgentemente<br>fazer outra coisa.</li><li>É como se você criasse pequenas branches.</li><li>Permite limpar rapidamente o git para poder fazer uma operação nele<br>e voltar.</li><li>Git stash pega tudo que foi modificado na pasta, cria um pequeno commit<br>e guarda</li><li>Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado<br>para o outro.</li></ul><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Criar um stash</td><td><strong>git stash</strong></td></tr><tr><td>Ver o que há no stash</td><td><strong>git stash list</strong></td></tr><tr><td>Reaplicar commit stash</td><td><strong>git stash pop</strong></td></tr></tbody></table><hr><h3>Uso remoto do git<span class="hx:absolute hx:-mt-20" id=uso-remoto-do-git></span>
+<a href=#uso-remoto-do-git class=subheading-anchor aria-label="Permalink for this section"></a></h3><ul><li>Enviar projeto para repositório no github via SSH</li></ul><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Conectar diretório ao repositório</td><td><code>git remote add origin \&lt;endereçoSshGit></code></td></tr><tr><td>Nomear branch do repositótio</td><td><code>git branch -M main</code></td></tr><tr><td>Envia e conecta a branch local a branch remoto</td><td><code>git push -u origin &lt;nome-da-branch></code></td></tr><tr><td>Clonar repositório remoto</td><td><code>git clone \&lt;endereçoSshGit></code></td></tr><tr><td>Trazer/recuperar informações remotas de vários branches</td><td><code>git fetch</code></td></tr><tr><td>Trazer/recuperar informações remotas de todos as branches</td><td><code>git fetch --all</code></td></tr><tr><td>Atualizar informações na branch main trazidas pelo <code>fetch</code></td><td><code>git rebase origin/main</code></td></tr><tr><td>Fazer <code>fetch</code> e <code>rebase</code> ao mesmo tempo</td><td><code>git pull --rebase</code></td></tr><tr><td>Fazer <code>fetch</code> e <code>merge</code> ao mesmo tempo</td><td><code>git pull</code></td></tr><tr><td>Fazer <code>fetch</code> e <code>merge</code> em branch especifica</td><td><code>git pull origin \&lt;nome-branch></code></td></tr><tr><td>Fazer <code>fetch</code> em branch especifica</td><td><code>git fetch origin \&lt;nome-branch></code></td></tr></tbody></table><hr><table><thead><tr><th>Observações</th></tr></thead><tbody><tr><td>Endereço ssh é parecido com: <em><a href=mailto:git@github.com>git@github.com</a>:faleite/tutors.git</em></td></tr></tbody></table><h4>Mais comandos<span class="hx:absolute hx:-mt-20" id=mais-comandos-1></span>
+<a href=#mais-comandos-1 class=subheading-anchor aria-label="Permalink for this section"></a></h4><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Mostrar nome do repositótio remoto</td><td><strong>git remote</strong></td></tr><tr><td>Mostrar caminho do repositótio remoto</td><td><strong>git remote -v</strong></td></tr><tr><td>Fazer <strong>fetch</strong> e <strong>rebase</strong> ao mesmo tempo</td><td><strong>git pull &ndash;rebase &ndash;origin main</strong></td></tr><tr><td>Mostrar commits remoto</td><td><strong>git log origin/main</strong></td></tr><tr><td>Criar arquivo no repositório</td><td><strong>touch &lt;nomeArquivo></strong></td></tr><tr><td>Criar uma linha de texto no arquivo</td><td><strong>echo &ldquo;linha de text&rdquo; &#187; &lt;nomeArquivo></strong></td></tr><tr><td>Mostrar conteúdo do arquivo</td><td><strong>cat &lt;nomeArquivo></strong></td></tr><tr><td>Enviar commit para o github</td><td><strong>git push</strong></td></tr></tbody></table><hr><h2>Mais comandos do Git<span class="hx:absolute hx:-mt-20" id=mais-comandos-do-git></span>
+<a href=#mais-comandos-do-git class=subheading-anchor aria-label="Permalink for this section"></a></h2><h3>Git Log<span class="hx:absolute hx:-mt-20" id=git-log></span>
+<a href=#git-log class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Ver cada uma das alterações que ja foram feitas</td><td><strong>git log -p</strong></td></tr><tr><td>Ver duas ultimas alterações</td><td><strong>git log -p -2</strong> (-2 ou -1 &mldr;etc)</td></tr><tr><td>Ver quais arquivos foram alterados</td><td><strong>git log &ndash;stat</strong></td></tr><tr><td>Ver ultima inclusão e o que foi alterado</td><td><strong>git log -1 &ndash;stat</strong></td></tr><tr><td>Ver a alteração do ultimo commit</td><td><strong>git log -p -1</strong></td></tr><tr><td>Monitorar arquivo específico</td><td><strong>git log &ndash; &lt;nomeArquvio></strong></td></tr><tr><td>Mostrar gráfico das alterações</td><td><strong>git log &ndash;graph</strong></td></tr><tr><td>Mostrar gráfico das alterações em apenas uma linha</td><td><strong>git log &ndash;graph &ndash;oneline</strong></td></tr><tr><td>Mostrar cada commit em apenas uma linha</td><td><strong>git log &ndash;oneline</strong></td></tr><tr><td>Mostrar cada commit em apenas uma linha de forma resumida</td><td><strong>git log &ndash;pretty=oneline</strong></td></tr><tr><td>Mostrar os commits por autor</td><td><strong>git log &ndash;author=&ldquo;Fabricio Araujo&rdquo;</strong></td></tr><tr><td>Buscar commits por palavras</td><td><strong>git log &ndash;grep=&ldquo;Olá&rdquo;</strong></td></tr></tbody></table><h3>Git log detalhado<span class="hx:absolute hx:-mt-20" id=git-log-detalhado></span>
+<a href=#git-log-detalhado class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>flag</th><th>Ação</th></tr></thead><tbody><tr><td>%h</td><td>Abreviação do hash</td></tr><tr><td>%an</td><td>Nome do autor</td></tr><tr><td>%ar</td><td>Data</td></tr><tr><td>%s</td><td>Comentário</td></tr></tbody></table><ul><li>Exemplo de histórico com formatação específica</li></ul><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"><div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># hash abreviada, autor, data e comentário</span>
+</span></span><span style=display:flex><span>git log --pretty<span style=color:#f92672>=</span>format:<span style=color:#e6db74>&#34;%h - %an, %ar : %s&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"><button class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50" title="Copy code" aria-label="Copy code" data-copied-label=Copied!><div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div><div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div></button></div></div><ul><li>Exemplo de histórico com formatação específica, com hash não abreviada</li></ul><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"><div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Exibe id (hash) compelto dos commits</span>
+</span></span><span style=display:flex><span>git log --pretty<span style=color:#f92672>=</span>format:<span style=color:#e6db74>&#34;%H&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># outra forma (a flag -1 indica o numero de commits a serem mostrados)</span>
+</span></span><span style=display:flex><span>git log -1 --format<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;%H&#34;</span>  <span style=color:#75715e># Exibe id (hash) completo do primeiro commit</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"><button class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50" title="Copy code" aria-label="Copy code" data-copied-label=Copied!><div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div><div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div></button></div></div><hr><h3>Git Config<span class="hx:absolute hx:-mt-20" id=git-config></span>
+<a href=#git-config class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Listar as variáveis de configuração do git</td><td><strong>git config -l</strong> / <strong>git config &ndash;list</strong></td></tr><tr><td>Listar as variáveis local do git</td><td><strong>git config -l &ndash;local</strong></td></tr><tr><td>Listar as variáveis global do git</td><td><strong>git config -l &ndash;global</strong></td></tr><tr><td>Configurar user name</td><td><strong>git config user.name &lt;nomeUsuario></strong></td></tr><tr><td>Configurar user email</td><td><strong>git config user.email <a href=mailto:teste@gmail.com>teste@gmail.com</a></strong></td></tr><tr><td>Criar atalhos com alias do git</td><td></td></tr><tr><td>alias.conf -> conf = nome do atalho</td><td><strong>git config &ndash;local alias.conf &lsquo;config &ndash;local -l&rsquo;</strong></td></tr><tr><td>Deletar atalho feito no git</td><td><strong>git config &ndash;unset alias.conf</strong> (alias.conf -> nome atalho)</td></tr></tbody></table><ul><li>Adicionar co-autor no commit</li></ul><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"><div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#39;Menssagem sobre o arquivo!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; Co-authored-by: nome &lt;email.@email.com&gt;&#39;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"><button class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50" title="Copy code" aria-label="Copy code" data-copied-label=Copied!><div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div><div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div></button></div></div><hr><h3>Os três estágios do git<span class="hx:absolute hx:-mt-20" id=os-três-estágios-do-git></span>
+<a href=#os-tr%c3%aas-est%c3%a1gios-do-git class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Estágio</th><th>Estado</th></tr></thead><tbody><tr><td>WORKING TREE (DIRECTORY)</td><td>O arquivo esta apenas no diretório</td></tr><tr><td>STAGING AREA</td><td>O arquivo está numa area intermediária do git (quando passamos o <strong>git add</strong>)</td></tr><tr><td>.GIT DIRECTORY (REPOSITORY)</td><td>O arquivo esta no git (quando fazemos o <strong>commit</strong>)</td></tr></tbody></table><hr><h3>Tags de commit no git<span class="hx:absolute hx:-mt-20" id=tags-de-commit-no-git></span>
+<a href=#tags-de-commit-no-git class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Criar uma tag</td><td><strong>git tag -a v1.0 -m &lt;nomeVersao></strong></td></tr><tr><td>v1.0</td><td>é o nome da Tag</td></tr><tr><td>&lt;nomeVersao></td><td>é mensagem da tag</td></tr><tr><td>Listar todas as tags criadas</td><td><strong>git tag</strong></td></tr><tr><td>Listar todas as tags criadas e suas mensagens</td><td><strong>git tag -n</strong></td></tr><tr><td>Mostrar o conteúdo das tegs</td><td><strong>git show &ndash;tags</strong></td></tr><tr><td>Apagar tags</td><td><strong>git tag -d v1.0</strong> (v1.0 = nome da tag)</td></tr><tr><td>Enviar <strong>tag</strong> criada para o repositório remoto</td><td><code>git push origin &lt;nome-da-tag></code></td></tr></tbody></table><hr><h3>Menssagem padronizada do comiit no git:<span class="hx:absolute hx:-mt-20" id=menssagem-padronizada-do-comiit-no-git></span>
+<a href=#menssagem-padronizada-do-comiit-no-git class=subheading-anchor aria-label="Permalink for this section"></a></h3><table><thead><tr><th>Ação</th><th>Comando</th></tr></thead><tbody><tr><td>Cria arquivo com o nome</td><td><strong>.git message</strong></td></tr><tr><td>Edite uma menssagem padrão neste arquivo</td><td><strong>.git message</strong></td></tr><tr><td>Configurar o template da menssagem no git</td><td><strong>git config commit.tamplate .gitmessage</strong></td></tr><tr><td>Listar a variáveis que foram configuradas no git</td><td><strong>git config &ndash;list</strong></td></tr><tr><td>Fazer commit com menssagem padronisada</td><td><strong>git commit</strong></td></tr></tbody></table></div><div class=hx:mt-16></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a href=/blog/ambiente-virtual-linux-server/ title="Ambiente virtual com linux server" class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Ambiente virtual com linux server</a></div></main></article></div><footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start hx:group" data-theme=light><button title="Change theme" data-state=closed data-location=bottom class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow" type=button aria-label="Change theme" aria-expanded=false aria-haspopup=menu><div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height="12" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">Light</span><svg height="12" class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003.0 0012 21a9.003 9.003.0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">Dark</span><svg height="12" class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996094 2C6.4986225 2.0192368 2.03125 6.5024993 2.03125 12c0 5.497501 4.4673725 9.980763 9.964844 10H12 12.0039c5.497471-.01924 9.964844-4.502499 9.964844-10 0-5.4975007-4.467373-9.9807632-9.964844-10H12zM12 4c4.417218.017598 7.96875 3.5822356 7.96875 8 0 4.417764-3.551532 7.982402-7.96875 8z"/></svg>
+<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">System</span></div></button><ul class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-lg hx:border hx:border-gray-200 hx:bg-white hx:p-1 hx:text-sm hx:shadow-lg hx:dark:border-neutral-700 hx:dark:bg-neutral-900" style="position:fixed;inset:auto auto 0 0;margin:0;min-width:100px" data-theme=light role=menu><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=true tabindex=-1 data-item=light class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Light
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=dark class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+Dark
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li><li role=none class="hx:flex hx:flex-col"><button type=button role=menuitemradio aria-checked=false tabindex=-1 data-item=system class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9 hx:text-left hx:w-full hx:bg-transparent hx:border-0">
+System
+<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height="1em" width="1em" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></button></li></ul></div></div><hr class="hx:border-gray-200 hx:dark:border-neutral-800"><div class="hextra-custom-footer hextra-max-footer-width hx:mx-auto hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"><div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class=hx:font-semibold><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target=_blank rel="noopener noreferrer" title="Hextra GitHub Homepage" href=https://github.com/imfing/hextra><span>Powered by Hextra<svg height="1em" class="hx:inline-block hx:ltr:ml-1 hx:rtl:mr-1 hx:align-[-2.5px]" viewBox="0 0 180 180" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m105.50024 22.224647c-9.59169-5.537563-21.40871-5.537563-31.000093.0L39.054693 42.689119C29.463353 48.226675 23.55484 58.460531 23.55484 69.535642v40.928918c0 11.07542 5.908513 21.3092 15.499853 26.84652l35.445453 20.46446c9.591313 5.53732 21.408404 5.53732 31.000094.0l35.44507-20.46446c9.59131-5.53732 15.49985-15.7711 15.49985-26.84652V69.535642c0-11.075111-5.90854-21.308967-15.49985-26.846523zM34.112797 85.737639c-1.384445 2.397827-1.384445 5.352099.0 7.749927l24.781554 42.922974c1.38437 2.39783 3.942853 3.87496 6.711592 3.87496h49.563107c2.76905.0 5.3273-1.47713 6.71144-3.87496l24.78194-42.922974c1.38414-2.397828 1.38414-5.3521.0-7.749927L121.88049 42.814746c-1.38414-2.397828-3.94239-3.874964-6.71144-3.874964H65.605944c-2.768739.0-5.327223 1.477059-6.711592 3.874964z" style="stroke-width:.774993"/></svg></span></a></div></div></div></footer><dialog id=hextra-search-dialog class=hextra-search-dialog aria-label=Search...><div class=hextra-search><div class=hextra-search-input-wrapper><svg class="hextra-search-input-icon" focusable="false" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5A7 7 0 113 10a7 7 0 0114 0z"/></svg><input class=hextra-search-input type=search role=combobox autocomplete=off autocorrect=off autocapitalize=off spellcheck=false placeholder=Search... aria-label=Search... aria-controls=hextra-search-results aria-expanded=false><button type=button class=hextra-search-input-kbd data-search-close aria-label=Close>ESC</button></div><div class=hextra-search-results-viewport data-search-viewport><div class="hextra-search-results-inner hextra-scrollbar" data-search-inner><ul id=hextra-search-results class=hextra-search-results role=listbox aria-label="Search results"></ul><div class=hextra-search-empty data-search-empty hidden>No results found.</div></div></div><div class="hextra-search-status hx:sr-only" aria-live=polite role=status></div></div></dialog><script defer src=/js/main.min.f1c694920359e328c628cb95fb86316be3f5ee2257d8c27525f7970e40160581.js integrity="sha256-8caUkgNZ4yjGKMuV+4Yxa+P17iJX2MJ1JfeXDkAWBYE="></script><script defer src=/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin=anonymous></script><script defer src=/en.search.min.8c37d283b99edc92c7c734950ae7cce3ec72979aee706694759c952c1b2e2654.js integrity="sha256-jDfSg7me3JLHxzSVCufM4+xyl5rucGaUdZyVLBsuJlQ="></script><script defer src=/en.search-dialog.min.fda123910557b5b3a328696105af51f85abc3cfc6784387c49b11b5b857b256f.js integrity="sha256-/aEjkQVXtbOjKGlhBa9R+Fq8PPxnhDh8SbEbW4V7JW8="></script></body></html>
