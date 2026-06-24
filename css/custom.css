@@ -1,0 +1,21 @@
+/* Aumentar a centralização do conteúdo */
+
+/* Opção 1: Reduzir a largura máxima do conteúdo para mais espaço em branco */
+:root {
+  --hextra-max-content-width: 65rem; /* reduzido de 72rem */
+}
+
+/* Centralizar a lista de posts */
+.content ~ div {
+  text-align: center;
+}
+
+/* Centralizar títulos dos posts na lista */
+h3 a {
+  display: block;
+}
+
+/* Centralizar tags dos posts */
+.hextra-tags {
+  justify-content: center;
+}

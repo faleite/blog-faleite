@@ -1,0 +1,115 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>faleite.xyz – Artigos de FaLeite</title><link>https://blog.faleite.xyz/blog/</link><description>Recent content in Artigos de FaLeite on faleite.xyz</description><generator>Hugo -- gohugo.io</generator><language>pt-BR</language><lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.faleite.xyz/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Ambiente virtual com linux server</title><link>https://blog.faleite.xyz/blog/ambiente-virtual-linux-server/</link><pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate><guid>https://blog.faleite.xyz/blog/ambiente-virtual-linux-server/</guid><description>
+&lt;h1&gt;VIRTUAL ENVIRONMENT&lt;/h1&gt;&lt;h3&gt;Solution for terminal in 42 for vscode 1.82&lt;span class="hx:absolute hx:-mt-20" id="solution-for-terminal-in-42-for-vscode-182"&gt;&lt;/span&gt;
+&lt;a href="#solution-for-terminal-in-42-for-vscode-182" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;terminal.integrated.defaultProfile.linux&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;bash&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;terminal.integrated.profiles.linux&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;bash&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;/usr/bin/flatpak-spawn&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;--host&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;--env=TERM=xterm-256color&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;zsh&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;icon&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;terminal-zsh&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;overrideName&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+aria-label="Copy code"
+data-copied-label="Copied!"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;a
+href="https://github.com/flathub/com.visualstudio.code/issues/370#issuecomment-1563240250"target="_blank" rel="noopener"&gt;Solucao sobrecarga de mensagems no terminal&lt;/a&gt;&lt;span class="hx:absolute hx:-mt-20" id="solucao-sobrecarga-de-mensagems-no-terminal"&gt;&lt;/span&gt;
+&lt;a href="#solucao-sobrecarga-de-mensagems-no-terminal" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h4&gt;&lt;a
+href="https://github.com/flathub/com.visualstudio.code#readme"target="_blank" rel="noopener"&gt;Nova Solucao pode usar ZSH&lt;/a&gt;&lt;span class="hx:absolute hx:-mt-20" id="nova-solucao-pode-usar-zsh"&gt;&lt;/span&gt;
+&lt;a href="#nova-solucao-pode-usar-zsh" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;hr&gt;
+&lt;h2&gt;Links&lt;span class="hx:absolute hx:-mt-20" id="links"&gt;&lt;/span&gt;
+&lt;a href="#links" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+href="https://youtu.be/nKcfhI1B4mA"target="_blank" rel="noopener"&gt;Linux Server in Virtual Box&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://medium.com/nullifying-the-null/vscode-remote-development-with-virtualbox-aecd702d7933"target="_blank" rel="noopener"&gt;VScode remote with virtual-box&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://dev.to/codevault/multi-cursor---visual-studio-code-productivity-features---part-1-1gha"target="_blank" rel="noopener"&gt;Totorial code-vault for vscode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://gist.github.com/mferoc/7b76f9477e0f76befc7161800d9723f7"target="_blank" rel="noopener"&gt;Tutorial 42&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://dev.to/softwaredotcom/vs-code-settings-you-should-customize-5e75"target="_blank" rel="noopener"&gt;Global tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://www.youtube.com/watch?v=MZgbd7bjCTk"target="_blank" rel="noopener"&gt;Video Tutorial atalhos&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Mover linha: &lt;strong&gt;alt + seta&lt;/strong&gt; (cima e baixo)&lt;/li&gt;
+&lt;li&gt;Deletar linha &lt;strong&gt;Ctrl + Shift + k&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Multiplo cursor &lt;strong&gt;Alt + click&lt;/strong&gt; (nas palavras)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://medium.com/@dukefullstack/visual-studio-code-tips-como-exibir-os-pontos-de-identa%C3%A7%C3%A3o-1f92bdd9cef3"target="_blank" rel="noopener"&gt;Redenrizar espacos e tabs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Captura de tela bonita (plugin CodeSnap)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;a
+href="https://github.com/faleite/42env/blob/main/dcs/monitor.sh"target="_blank" rel="noopener"&gt;monitor&lt;/a&gt;&lt;span class="hx:absolute hx:-mt-20" id="monitor"&gt;&lt;/span&gt;
+&lt;a href="#monitor" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3&gt;&lt;a
+href="https://github.com/faleite/42env/blob/main/dcs/.zshrc"target="_blank" rel="noopener"&gt;.zshrc&lt;/a&gt;&lt;span class="hx:absolute hx:-mt-20" id="zshrc"&gt;&lt;/span&gt;
+&lt;a href="#zshrc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3&gt;&lt;a
+href="https://github.com/faleite/42env/blob/main/dcs/settings.json"target="_blank" rel="noopener"&gt;My settings VSCODE&lt;/a&gt;&lt;span class="hx:absolute hx:-mt-20" id="my-settings-vscode"&gt;&lt;/span&gt;
+&lt;a href="#my-settings-vscode" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;h2&gt;Ideia para VM in cloud&lt;span class="hx:absolute hx:-mt-20" id="ideia-para-vm-in-cloud"&gt;&lt;/span&gt;
+&lt;a href="#ideia-para-vm-in-cloud" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;APPS ON TERMINAL&lt;span class="hx:absolute hx:-mt-20" id="apps-on-terminal"&gt;&lt;/span&gt;
+&lt;a href="#apps-on-terminal" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;htop e bashtop - monitoramento do sistema / top&lt;/li&gt;
+&lt;li&gt;Ranger - Gerenciador de arquivos em modo texto&lt;/li&gt;
+&lt;li&gt;ncdu - verificar espaço livre em disco no Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;App Terminator como padrão no Ubuntu&lt;span class="hx:absolute hx:-mt-20" id="app-terminator-como-padrão-no-ubuntu"&gt;&lt;/span&gt;
+&lt;a href="#app-terminator-como-padr%c3%a3o-no-ubuntu" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Copy-paste the following into your current terminal:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gsettings set org.gnome.desktop.default-applications.terminal exec-arg &lt;span style="color:#e6db74"&gt;&amp;#34;-x&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+aria-label="Copy code"
+data-copied-label="Copied!"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Virtual Environment on Linux&lt;span class="hx:absolute hx:-mt-20" id="virtual-environment-on-linux"&gt;&lt;/span&gt;
+&lt;a href="#virtual-environment-on-linux" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;ul&gt;
+&lt;li&gt;python
+&lt;ul&gt;
+&lt;li&gt;pip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;norminette&lt;/li&gt;
+&lt;li&gt;zsh
+&lt;ul&gt;
+&lt;li&gt;Oh my Zsh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;vim&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;ssh&lt;/li&gt;
+&lt;li&gt;Apps IOS
+&lt;ul&gt;
+&lt;li&gt;Karabiner&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://support.displaylink.com/knowledgebase/topics/80209-troubleshooting-macos"target="_blank" rel="noopener"&gt;Displaylink&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mounty&lt;/li&gt;
+&lt;li&gt;belenaEtcher (montar ISO é preciso altorizar via sudo)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
