@@ -44,3 +44,7 @@ params:
       link: /blog
       width: 25
       height: 25
+
+services:
+  disqus:
+    shortname: faleite
