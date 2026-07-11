@@ -44,8 +44,19 @@ params:
       link: /blog
       width: 25
       height: 25
+  
   comments:
     enable: true
-    type: utterances
-    utterances:
-      repo: faleite/blog-faleite
+    type: zoomment
+    zoomment:
+      theme: light # black light dark
+      language: pt-BR
+      gravatar: monsterid # retro monsterid
+      emotions: "❤️,😀,🪄,🥸,💡,🤔,💩,😢"
+      visitors: true
+
+  # comments:
+  #   enable: true
+  #   type: utterances
+  #   utterances:
+  #     repo: faleite/blog-faleite
