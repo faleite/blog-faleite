@@ -2,7 +2,7 @@
 title: ""
 ---
 > [!NOTE]  
-> **[Blog](https://faleite.xyz/blog/)**
+> **[Blog](https://blog.faleite.xyz/blog/)**
 
 > [!TIP]
 > **[About Me](https://faleite.xyz)**
