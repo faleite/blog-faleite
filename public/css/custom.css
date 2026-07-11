@@ -19,3 +19,13 @@ h3 a {
 .hextra-tags {
   justify-content: center;
 }
+
+/* Contraste do texto das mensagens do Zoomment */
+html:not(.dark) #zoomment .sc-eldPxv.jTeMWm {
+  color: #111827 !important;
+}
+
+html.dark #zoomment .sc-eldPxv.jTeMWm {
+  color: #f9fafb !important;
+}
+
