@@ -1,1 +1,27 @@
-{{ partial "disqus.html" . }}
+{{- $enableComments := site.Params.comments.enable | default false -}}
+
+{{ if not (eq .Params.comments nil) }}
+  {{ $enableComments = .Params.comments }}
+{{ end }}
+
+{{- if $enableComments -}}
+  {{- $repo := site.Params.comments.utterances.repo | default "" -}}
+  {{- if $repo -}}
+    <div class="hx:mt-12 hx:pt-8 hx:border-t hx:border-gray-200 hx:dark:border-gray-800">
+      <h2 class="hx:mb-4 hx:text-xl hx:font-semibold hx:text-slate-900 hx:dark:text-slate-100">Comentários</h2>
+      <p class="hx:mb-4 hx:text-sm hx:text-gray-600 hx:dark:text-gray-400">
+        Os comentários são enviados para o GitHub Issues do repositório do blog.
+      </p>
+      <script src="https://utteranc.es/client.js"
+        repo="{{ $repo }}"
+        issue-term="pathname"
+        label="comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  {{- else -}}
+    {{ warnf "Utterances is not configured" }}
+  {{- end -}}
+{{- end -}}

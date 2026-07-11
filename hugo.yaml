@@ -44,7 +44,8 @@ params:
       link: /blog
       width: 25
       height: 25
-
-services:
-  disqus:
-    shortname: faleite
+  comments:
+    enable: true
+    type: utterances
+    utterances:
+      repo: faleite/blog-faleite
